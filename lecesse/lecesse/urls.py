@@ -21,7 +21,7 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
 
     #direcciones del modulo base
-    path('home/', include('base.urls')),
+    path('', include('base.urls')),
     #direcciones del modulo users
     path('users/', include('users.urls')),
     #redirige al index luego de hacer el login

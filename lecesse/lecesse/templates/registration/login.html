@@ -54,19 +54,47 @@
               >Login</button>
           </form>
     </div>
+      <small class="text-danger">
+                            {% for message in messages %}
+                            <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                {{ message }}
+                            </div>
+                            {% endfor %}
+                            {% if form.errors %}
+                            {% for field in form %}
+                            {% if field.errors %}
+                            {% for error in field.errors %}
+                            {{ error|escape }}
+                            {% endfor %}
+                            {% endif %}
+                            {% endfor %}
+                            {% endif %}
+
+                            {% if form.non_field_errors %}
+                            {% for error in form.non_field_errors %}
+                            {{ error|escape }}
+                            {% endfor %}
+                            {% endif %}
+
+                        </small>
 
     <div class="form form-signin">
         <aside class="text-center">
             <h1>SING IN</h1>
             <p>Login your account to start the service</p>
         </aside>
-      <form action="#">
+      <form action="#" method="POST">
+          {% csrf_token %}
         <lable>Username</lable>
         <input type="email"
-               placeholder="Your e-mail">
+               placeholder="Your e-mail" class="form-control form-control-user" id="id_username" name="username">
         <lable>Password</lable>
         <input type="password"
-               placeholder="Your password" style="margin-bottom:10px;">
+               placeholder="Your password" style="margin-bottom:10px;" class="form-control form-control-user" id="id_password"
+                                    name="password">
         <p class="forget"><a class="to-signup" href="#">Forget password?</a></p>
         <input type="submit"
                class="form-btn"

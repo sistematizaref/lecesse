@@ -221,7 +221,7 @@ p.terms {
 input[type="text"],
 input[type="email"], 
 input[type="password"] {
-    color: #000;
+    color: #000 !important;
     width: 100%;
     border: none;
     font-size: 16px;
@@ -363,7 +363,7 @@ div#providers input[type="email"],
   background: #ffffff !important;
     border-radius: 4px;
     border: 1px solid #ced4da;
-    color: #ffffff !important;
+    color: #ffffff;
     font-size: .85em !important;
 }
 
@@ -390,4 +390,11 @@ div#infoGroup {
 
 button.btn.dropdown-toggle.btn-light {
   color: #666666 !important;
+}
+
+.helptext >ul, span.helptext, .form-group > br  {
+    display: none;
+}
+input#id_password1, input#id_password2 {
+    margin-bottom: 10px !important;
 }

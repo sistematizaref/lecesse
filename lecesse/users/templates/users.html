@@ -33,33 +33,7 @@
                                         <div class="col-sm-8">
                                             <b class="text-center" style="color: #9E3639;">Create users</b>
                                             <div class="form-group mt-4">
-                                                {{form.first_name}}
-                                            </div>
-                                            <div class="form-group">
-                                                {{form.last_name}}
-                                            </div>
-                                            <div class="form-group">
-                                                {{form.document_number}}
-                                            </div>
-                                            <div class="form-group">
-                                                {{form.phone_number}}
-                                            </div>
-                                            <div class="form-group">
-                                                {{form.email}}
-                                            </div>
-                                            <div class="form-group">
-                                                {{form.address}}
-                                            </div>
-                                            <div class="form-group">
-                                                {{form.role}}
-                                            </div>
-                                            <div class="form-group">
-                                                {{form.project}}
-                                            </div>
-                                            <div class="form-group">
-                                                <div class="input-group">
-                                                    {{form.password1}}
-                                                </div>
+                                                {{form}}
                                             </div>
                                             <button type="submit" class="btn btnSubcategory mt-2" style="color: #ffffff !important;
                                             font-size: .85em !important;">Create</button>
@@ -105,14 +79,14 @@
                                                 {{user.email}}
                                             </td>
                                             <td class="project-actions text-right">
-                                                <a class="btn btn-primary btn-sm" href="{% url 'base:view_user' %}">
+                                                <a class="btn btn-primary btn-sm" href="">
                                                     <i class="far fa-eye" style="color: #ffffff;"></i>
                                                 </a>
-                                                <a class="btn btn-info btn-sm" href="{% url 'base:edit_user' %}">
+                                                <a class="btn btn-info btn-sm" href="">
                                                     <i class="fas fa-pencil-alt" style="color:#ffffff;">
                                                     </i>
                                                 </a>
-                                                <a class="btn btn-danger btn-sm" href="{% url 'base:delete_user' %}">
+                                                <a class="btn btn-danger btn-sm" href="">
                                                     <i class="fas fa-trash" style="color:#ffffff;">
                                                     </i>
                                                 </a>

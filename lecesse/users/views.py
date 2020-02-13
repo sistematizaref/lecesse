@@ -5,7 +5,7 @@ from users.models import CustomUser
 # Create your views here.
 
 
-def index(request):
+def home(request):
     """show users view"""
     users = CustomUser.objects.all()
     if request.method == 'POST':
