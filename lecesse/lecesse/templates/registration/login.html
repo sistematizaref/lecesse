@@ -1,0 +1,87 @@
+{% load staticfiles i18n %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+    {% block css %}
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css'>
+  <link rel="stylesheet" href="{% static 'dist/css/style.css' %}">
+    {% endblock %}
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="main-box">
+  <div class="slider-cont">
+    <div class="signup-slider">
+      <div class="img-txt">
+        <div class="img-layer"></div>
+        <h1>Text 1</h1>
+        <p>It's a example</p>
+        <img src="{% static 'dist/img/backLogin.png' %}" style="background: #061741; width: 100%;"/>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="form-cont">
+    <!--
+    <div class="top-buttons">
+      <button class="to-signup ">
+        Sign Up
+      </button>
+      <button class="to-signin top-active-button">
+        Sign In
+      </button>
+    </div>
+    -->
+    <div class="form form-signup">
+        <h3 class="text-center">You forgot your password? <br>Here you can easily retrieve a new password.</h3>
+        <form >
+            <div class="input-group mb-3">
+              <input type="email" class="form-control" placeholder="Email">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-envelope"></span>
+                </div>
+              </div>
+            </div>
+            <button class="form-btn new"
+               >New Password</button>
+
+               <button class="form-btn to-signin login"
+              >Login</button>
+          </form>
+    </div>
+
+    <div class="form form-signin">
+        <aside class="text-center">
+            <h1>SING IN</h1>
+            <p>Login your account to start the service</p>
+        </aside>
+      <form action="#">
+        <lable>Username</lable>
+        <input type="email"
+               placeholder="Your e-mail">
+        <lable>Password</lable>
+        <input type="password"
+               placeholder="Your password" style="margin-bottom:10px;">
+        <p class="forget"><a class="to-signup" href="#">Forget password?</a></p>
+        <input type="submit"
+               class="form-btn"
+               value="Sign In"/>
+        <!--<a href="#" class="lined-link to-signup-link">Create new account</a>-->
+      </form>
+    </div>
+  </div>
+  <div class="clear-fix"></div>
+</div>
+<!-- partial -->
+    {% block js %}
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js'></script>
+<script  src="{% static 'js/script.js' %}"></script>
+    {% endblock %}
+</body>
+</html>

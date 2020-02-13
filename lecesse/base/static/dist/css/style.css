@@ -1,0 +1,393 @@
+/* @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,700'); */
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:200,300,400,700');
+
+/************ Start Main Rules **************/
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+body{background: #ffffff; }
+
+.main-box{
+  position: relative;
+  display: contents;
+  width: 100vh;
+  height: 100vh;
+  margin: 0px;
+  border-radius: 8px;
+  overflow: hidden;
+  background:#ffffff;
+}
+
+.lined-link{
+  position: relative;
+  text-decoration: none;
+  transition: all 0.2s linear
+}
+
+.lined-link:hover{
+  opacity: 0.5
+}
+
+.lined-link:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  left: 0;
+  bottom: -2px;
+  border: none;
+  border-bottom: 1px solid #63d5c4;
+}
+
+/************ Start Slider Container **************/
+.slider-cont{
+  width: 60%;
+  height: 100%;
+  float: left;
+}
+.form-cont{
+  width: 40%;
+  height: 100%;
+  float: left;
+}
+
+.slick-slide,
+.slick-slider{
+  width: 100%;
+  height: 100% 
+}
+
+.slick-slide img{
+    width: 100%;
+}
+
+.clear-fix{
+  clear: both;
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: 150px;
+  display: block;
+  width: 100%;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: 0 3px;
+  padding: 0;
+  cursor: pointer;
+}
+.slick-dots li button {
+  font-size: 0;
+  display: block;
+  width: 10px;
+  height: 10px;
+  padding: 5px;
+  cursor: pointer;
+  border: 0;
+  outline: none;
+  background: rgba(255, 255, 255, 0.50);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.slick-dots li.slick-active button{
+  background-color: #ffffff;
+  transform: scale(1.6);
+  box-shadow: 0 0 10px #1b1b1b;
+}
+
+.img-txt{
+  position: relative;
+}
+
+.img-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.img-txt h1{
+  position: absolute;
+  display: block;
+  top: 50%;
+  color: #fff;
+  width: 100%;
+  padding: 30px 70px;
+  font-size: 35px;
+  font-weight: 100;
+  text-align: center;
+  transform: translateY(-100%);
+  background-color: transparent;
+}
+.img-txt p{
+    position: absolute;
+    display: block;
+    top: 50%;
+    color: #fff;
+    width: 100%;
+    padding: 50px 70px;
+    font-size: 25px;
+    font-weight: 100;
+    text-align: center;
+    transform: translateY(-50%);
+    background-color: transparent;
+  }
+
+/************ Start Form Container **************/
+
+.top-buttons {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 15%;
+  padding: 25px;
+  text-align: right;
+}
+
+.top-buttons button {
+  color: #cacaca;
+  border: none;
+  width: 90px;
+  margin: -2px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 300;
+  background: #4c5c72;
+  cursor: pointer;
+}
+
+.top-buttons button:nth-child(1) {
+  border-radius: 50px 0 0 50px;
+}
+
+.top-buttons button:nth-child(2) {
+  border-radius: 0 50px 50px 0;
+}
+
+.top-active-button, a.to-signup {
+    color: #a73439 !important;
+    box-shadow: none;
+    background: transparent;
+    transition: all 0.3s ease;
+    text-decoration:none;
+    font-size: .75em;
+}
+
+.form{
+  width: 100%;
+  height: 85%;
+  padding: 10px 40px;
+}
+
+.form form {
+  width: 100%;
+  height: 100%;
+}
+
+.form form 
+label,
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  display: block;
+}
+
+.form form label {
+  color: #000;
+  font-size: 16px;
+  font-weight: 300;
+  margin: 6px 0;
+}
+
+p.terms {
+  color: #9E9E9E;
+  margin-bottom: 60px;
+}
+
+.form form 
+input[type="text"],
+input[type="email"], 
+input[type="password"] {
+    color: #000;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    font-weight: 200;
+    margin-bottom: 45px;
+    padding: 10px 10px 10px 20px;
+    background: #dadada;
+    border-radius: 20px;
+}
+
+.form form input::placeholder{
+  color: #666666;
+}
+
+
+input.form-btn {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 12px 55px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s linear;
+    box-shadow: 0 0 5px rgb(176, 176, 177);
+    background: linear-gradient(to right, #061741,#A73439);
+    width: 70%;
+    margin: 0 15%;
+}
+
+button.form-btn.new {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s linear;
+    box-shadow: 0 0 5px rgb(39, 39, 39);
+    background: #061741;
+    width: 70%;
+    margin: 0 15% 20px;
+}
+
+
+button.login{
+    color: #ffffff !important;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 12px 25px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s linear;
+    box-shadow: 0 0 5px rgb(39, 39, 39);
+    background: #A73439;
+    width: 70%;
+    margin: 0 15% 20px;
+}
+
+input.form-btn:hover{
+  box-shadow: none
+}
+
+.form-signup{
+    display: none;
+    margin-top:25%;
+  }
+.form-signup h3{
+    margin-bottom: 1em;
+}
+
+.forget{
+    text-align: right;
+    margin-bottom: 3em;
+}
+
+.form-signin{
+  padding-top: 150px;
+}
+.text-center{
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.form-signin aside h1{
+    margin-bottom: 1em;
+}
+/*---------------------------------------------------------------------------------------*/
+
+/*------------------
+BASE
+------------------*/
+.content-wrapper {
+  background: #fff;
+}
+
+[class*=sidebar-dark] .user-panel {
+  margin: 0!important;
+  padding: .4em !important;
+  border: 0px !important;
+}
+
+nav.main-header.navbar.navbar-expand.navbar-white.navbar-light {
+  background: rgba(167,52,58,1);
+  background: -moz-linear-gradient(left, rgba(167,52,58,1) 0%, rgba(119,52,78,1) 34%, rgba(68,52,99,1) 70%, rgba(25,52,116,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(167,52,58,1)), color-stop(34%, rgba(119,52,78,1)), color-stop(70%, rgba(68,52,99,1)), color-stop(100%, rgba(25,52,116,1)));
+  background: -webkit-linear-gradient(left, rgba(167,52,58,1) 0%, rgba(119,52,78,1) 34%, rgba(68,52,99,1) 70%, rgba(25,52,116,1) 100%);
+  background: -o-linear-gradient(left, rgba(167,52,58,1) 0%, rgba(119,52,78,1) 34%, rgba(68,52,99,1) 70%, rgba(25,52,116,1) 100%);
+  background: -ms-linear-gradient(left, rgba(167,52,58,1) 0%, rgba(119,52,78,1) 34%, rgba(68,52,99,1) 70%, rgba(25,52,116,1) 100%);
+  background: linear-gradient(to right, rgba(167,52,58,1) 0%, rgba(119,52,78,1) 34%, rgba(68,52,99,1) 70%, rgba(25,52,116,1) 100%);
+}
+
+.info {
+  height: 53px;
+}
+
+/*INDEX*/
+.small-box.bg-info button {
+  width: 100%;
+  background: #fff;
+  height: 100px;
+  box-shadow: 1px 1px 3px #193474, -1px -1px 3px #653454 !important;
+  border-radius: 0;
+  border: 0px;
+}
+
+.btn:not(:disabled):not(.disabled).hover, .btn:not(:disabled):not(.disabled):hover ,
+.btn:not(:disabled):not(.disabled).active, .btn:not(:disabled):not(.disabled):active {
+  box-shadow: 1px 1px 3px #A73439, -1px -1px 3px #F4B500 !important;
+  background: #1f2d3d;
+  color: #ffffff;
+}
+
+div#providers input[type="email"],
+#usersCreate input[type="email"],
+#userEdit input[type="email"], #userEdit input[type="password"]{
+  background: #ffffff !important;
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+    color: #ffffff !important;
+    font-size: .85em !important;
+}
+
+/*--------------Fase 2 Environent--------------*/
+div#infoGroup {
+  background: #cccccc61;
+  padding: 9px 9.5px 1px;
+}
+
+#environments .dropdown,#environments .bootstrap-select,#environments .form-control.dropup,
+#environmentEdit .dropdown,#environmentEdit .bootstrap-select,#environmentEdit .form-control.dropup{
+  padding: .25rem 0 !important;
+  font-size: .75rem !important;
+  height: calc(1.75rem + 1px) !important;
+}
+
+
+#environmentEdit button.btn.dropdown-toggle.btn-light {
+  color: #666666 !important;
+  height: calc(1.75rem + 1px) !important;
+  padding: .25rem .35rem !important;
+  font-size: .75rem !important;
+}
+
+button.btn.dropdown-toggle.btn-light {
+  color: #666666 !important;
+}
