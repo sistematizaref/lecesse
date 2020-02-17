@@ -105,7 +105,7 @@
                             <i class="fas fa-users mr-2"></i>Users
                         </a>
                         <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
+                        <a href="{% url 'logout' %}" class="dropdown-item">
                             <i class="fas fa-sign-out-alt mr-2"></i> Out
                         </a>
                     </div>
@@ -161,7 +161,7 @@
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="" class="nav-link">
+                            <a href="{% url 'phase_one:home' %}" class="nav-link">
                                 <i class="nav-icon fas fa-file-signature" style="color:#ababab;"></i>
                                 <p style="color:#ababab;">
                                     Materials
@@ -246,7 +246,7 @@
 Content page
 ****************************** -->
         <div>
-              {% block content %}
+            {% block content %}
 
 
         {% endblock %}

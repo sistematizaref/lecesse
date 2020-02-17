@@ -19,11 +19,12 @@ from django.views.generic import RedirectView
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-
     #direcciones del modulo base
     path('', include('base.urls')),
     #direcciones del modulo users
     path('users/', include('users.urls')),
+    #direcciones del modulo phase one
+    path('phase_one/', include('phase_one.urls')),
     #redirige al index luego de hacer el login
     path('', RedirectView.as_view(url="/home/index/")),
     # muestra el login de inicio

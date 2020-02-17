@@ -1,0 +1,217 @@
+{% extends 'base_phase_one.html' %}
+{% block tab_content %}
+<div class="card-body mt-5 p-0">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <form role="form">
+                                            <div class="row">
+                                                <div class="col-sm-10">
+                                                    <b class="text-center" style="color: #000;">Create
+                                                        Material</b>
+
+                                                    <div class="form-group mt-3">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" id="Name"
+                                                            placeholder="Name">&nbsp;&nbsp;
+                                                            <input type="text" class="form-control" id="Reference"
+                                                            placeholder="Reference">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <textarea class="form-control" rows="2"
+                                                            placeholder="Description"></textarea>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            <input type="text" class="form-control" id="Color"
+                                                            placeholder="Color">&nbsp;&nbsp;
+                                                            <input type="text" class="form-control" id="Price"
+                                                            placeholder="Price">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <select class="form-control">
+                                                          <option>Measured type</option>
+                                                          <option>option 2</option>
+                                                          <option>option 3</option>
+                                                          <option>option 4</option>
+                                                          <option>option 5</option>
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="form-group" id="materialGroup">
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <span style="font-size: .85rem !important;">Area&nbsp;</span>
+                                                            </div>
+                                                            <div class="input-group-prepend">
+                                                                <input type="text" size=1 class="form-control"  name="base" id="base"> <span>&nbsp;x&nbsp;</span><input type="text" size=1 class="form-control" id="altura" name="altura">
+                                                            </div><span>&nbsp;=&nbsp;</span>
+                                                            <input type="text" class="form-control"   name="total" placeholder="Total">
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                            <label class="form-check-label" for="exampleCheck1">
+                                                               <small style="font-size: .6rem !important;">Use calculation of the material area for the other processes</small> </label>
+                                                          </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            <div class="custom-file">
+                                                                <input type="file" class="custom-file-input" id="customFile">
+                                                                <label class="custom-file-label" for="customFile">Icon</label>
+                                                            </div>&nbsp;&nbsp;
+                                                            <div class="custom-file">
+                                                                <input type="file" class="custom-file-input" id="customFile">
+                                                                <label class="custom-file-label" for="customFile">File</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            <select class="form-control">
+                                                                <option>Environment</option>
+                                                                <option>option 2</option>
+                                                                <option>option 3</option>
+                                                                <option>option 4</option>
+                                                                <option>option 5</option>
+                                                              </select>&nbsp;&nbsp;
+                                                              <select class="form-control">
+                                                                <option>Category</option>
+                                                                <option>option 2</option>
+                                                                <option>option 3</option>
+                                                                <option>option 4</option>
+                                                                <option>option 5</option>
+                                                              </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="input-group">
+                                                            <select class="form-control">
+                                                                <option>Subcategory</option>
+                                                                <option>option 2</option>
+                                                                <option>option 3</option>
+                                                                <option>option 4</option>
+                                                                <option>option 5</option>
+                                                              </select>&nbsp;&nbsp;
+                                                              <select class="form-control">
+                                                                <option>Subcategory 2</option>
+                                                                <option>option 2</option>
+                                                                <option>option 3</option>
+                                                                <option>option 4</option>
+                                                                <option>option 5</option>
+                                                              </select>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <button type="button"
+                                                        class="btn btnMaterials mt-2">Create</button>
+                                                </div>
+                                                <div class="col-sm-2"></div>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <p class="text-right"><button class="btn btn-flat btn-sm" style="background: #001D2C;color: #fff;">Exportar</button></p>
+                                        <table class="table table-striped projects mt-3" style="background:#ffffff;">
+                                            <thead>
+                                                <tr>
+                                                    <th style="width: 5%">
+                                                        ID
+                                                    </th>
+                                                    <th style="width: 20%">
+                                                        Name
+                                                    </th>
+                                                    <th style="width: 10%">
+                                                        Type
+                                                    </th>
+                                                    <th style="width: 15%">
+                                                        Category
+                                                    </th>
+                                                    <th style="width: 15%">
+                                                        Project
+                                                    </th>
+
+                                                    <th style="width: 40%">
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        1
+                                                    </td>
+                                                    <td>
+                                                       Material 1
+                                                    </td>
+                                                    <td>
+                                                        M2
+                                                    </td>
+                                                    <td>
+                                                        Category 1
+                                                    </td>
+                                                    <td>
+                                                        Project 1
+                                                    </td>
+
+                                                    <td class="project-actions text-right">
+                                                        <a class="btn btn-primary btn-sm" data-toggle="modal"
+                                                            data-target="#modal-viewEnvironments">
+                                                            <i class="far fa-eye" style="color: #ffffff;"></i>
+                                                        </a>
+                                                        <a class="btn btn-info btn-sm" data-toggle="modal"
+                                                            data-target="#modal-editEnvironments">
+                                                            <i class="fas fa-pencil-alt" style="color: #ffffff;">
+                                                            </i>
+                                                        </a>
+                                                        <a class="btn btn-danger btn-sm">
+                                                            <i class="fas fa-trash" style="color: #ffffff;">
+                                                            </i>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-12">
+                                                <div class="dataTables_paginate paging_simple_numbers"
+                                                    id="example1_paginate">
+                                                    <ul class="pagination">
+                                                        <li class="paginate_button page-item previous disabled"
+                                                            id="example1_previous">
+                                                            <a href="#" aria-controls="example1" data-dt-idx="0"
+                                                                tabindex="0" class="page-link">
+                                                                Previous
+                                                            </a>
+                                                        </li>
+                                                        <li class="paginate_button page-item active">
+                                                            <a href="#" aria-controls="example1" data-dt-idx="1"
+                                                                tabindex="0" class="page-link">
+                                                                1
+                                                            </a>
+                                                        </li>
+                                                        <li class="paginate_button page-item ">
+                                                            <a href="#" aria-controls="example1" data-dt-idx="2"
+                                                                tabindex="0" class="page-link">
+                                                                2
+                                                            </a>
+                                                        </li>
+                                                        <li class="paginate_button page-item next" id="example1_next">
+                                                            <a href="#" aria-controls="example1" data-dt-idx="7"
+                                                                tabindex="0" class="page-link">
+                                                                Next
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+{% endblock %}
