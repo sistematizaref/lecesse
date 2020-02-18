@@ -412,5 +412,18 @@ button.btn.dropdown-toggle.btn-light {
   padding: .5em;
 }
 
-/*Home Admin bacj number*/
+/*TAB fase 1*/
 
+#TabFaseUno .nav-item a {
+    padding: 1em 2.5em;
+    color: #6c757d !important;
+}
+
+#TabFaseUno .nav-item {
+    box-shadow: 0px 0px 5px #5a5a5a7d;
+    padding: .85em;
+}
+
+.tab-pane .btn {
+    color: #fff !important;
+}
