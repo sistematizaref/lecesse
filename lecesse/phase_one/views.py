@@ -4,8 +4,7 @@ from phase_one.forms import SubcategoryForm
 
 def home(request):
     """show phase one view"""
-    form_subcategory = SubcategoryForm()
-    return render(request, 'index_phase_one.html',{'form_subcategory': form_subcategory})
+    return render(request, 'index_phase_one.html')
 
 
 def category(request):
