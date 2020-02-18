@@ -15,6 +15,22 @@ ul.navbar-nav img {
     margin-left: 1em;
     width: 70%;
 }
+.modal-open .modal {
+    background: #00000070 !important;
+}
+.modal-dialog {
+    margin: 8% auto !important ;
+}
+
+.boRed{
+    border-left-color:#A73439 !important;
+}
+.boMora{
+    border-left-color: #4E259E !important;
+}
+.boAzulC{
+    border-left-color: #1F2AAB !important;
+}
 .sidebar {
     background: url(../img/backDashboard.png);
     background-position: bottom right;
@@ -48,7 +64,7 @@ hr {
     background: linear-gradient(to right, rgba(101,52,84,1) 0%, rgba(63,52,100,1) 50%, rgba(25,52,116,1) 100%);
 }
 
-ul.navbar-nav li:first-child {
+#navLogo li:first-child {
     display: none;
 }
 
@@ -76,8 +92,8 @@ h4, .page-link,a{
 }
 
 .page-item.active .page-link{
-    background-color: #001D2C !important;
-    border-color: #001D2C !important;
+    background-color: #D58017 !important;
+    border-color: #D58017 !important;
 }
 .btn-outline-secondary:hover {
     color: #000 !important;}
@@ -137,7 +153,8 @@ h4, .page-link,a{
     background-color: #B8790F !important;
 }
 
-.nav-link.active#category-tab, .btnCategory{
+.nav-link.active#category-tab, .btnCategory,
+.nav-link.active#environments-tab{
     background-color: #4E259E !important;
 }
 
@@ -151,7 +168,7 @@ h4, .page-link,a{
     background-color: #B8192E !important;
 }
 .nav-link.active#all-tab, .btnAll{
-    background-color: #001D2C !important;
+    background-color: #D58017 !important;
 }
 
 

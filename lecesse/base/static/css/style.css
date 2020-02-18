@@ -44,6 +44,14 @@ body{background: #ffffff; }
   border-bottom: 1px solid #63d5c4;
 }
 
+.table thead th {
+  vertical-align: middle !important;
+}
+
+.fa, .far, .fas{
+  font-size: 1.5em;
+}
+
 /************ Start Slider Container **************/
 .slider-cont{
   width: 60%;
@@ -221,7 +229,7 @@ p.terms {
 input[type="text"],
 input[type="email"], 
 input[type="password"] {
-    color: #000 !important;
+    color: #000;
     width: 100%;
     border: none;
     font-size: 16px;
@@ -352,18 +360,20 @@ nav.main-header.navbar.navbar-expand.navbar-white.navbar-light {
 
 .btn:not(:disabled):not(.disabled).hover, .btn:not(:disabled):not(.disabled):hover ,
 .btn:not(:disabled):not(.disabled).active, .btn:not(:disabled):not(.disabled):active {
-  box-shadow: 1px 1px 3px #A73439, -1px -1px 3px #F4B500 !important;
+  box-shadow: 1px 1px 3px #A73439, -1px -1px 3px #D58017 !important;
   background: #1f2d3d;
   color: #ffffff;
 }
 
 div#providers input[type="email"],
 #usersCreate input[type="email"],
-#userEdit input[type="email"], #userEdit input[type="password"]{
+#userEdit input[type="email"], 
+#userEdit input[type="password"],
+#modal_editProviders input[type="email"]{
   background: #ffffff !important;
     border-radius: 4px;
     border: 1px solid #ced4da;
-    color: #ffffff;
+    color: #ffffff !important;
     font-size: .85em !important;
 }
 
@@ -392,9 +402,15 @@ button.btn.dropdown-toggle.btn-light {
   color: #666666 !important;
 }
 
-.helptext >ul, span.helptext, .form-group > br  {
-    display: none;
+.backGray{
+  background: #19191929;
+  padding: .5em;
 }
-input#id_password1, input#id_password2 {
-    margin-bottom: 10px !important;
+
+.backGrayDos{
+  background: #a5a5a529;
+  padding: .5em;
 }
+
+/*Home Admin bacj number*/
+
