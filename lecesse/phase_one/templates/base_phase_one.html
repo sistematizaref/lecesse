@@ -27,7 +27,6 @@
                             <a class="nav-link active" id="all-tab" data-toggle="tab" href="" role="tab"
                                 aria-controls="all" aria-selected="true">All</a>
                         </li>
-
                         <li class="nav-item">
                             <a class="nav-link" id="category-tab" data-toggle="tab" href="{% url 'phase_one:category' %}" role="tab"
                                 aria-controls="category" aria-selected="false">Category</a>
@@ -44,13 +43,16 @@
                     </ul>
 
                     <!-- Tab panes -->
+                    <div class="tab-pane" id="category" role="tabpanel" aria-labelledby="category-tab">
+                     {% block prueba %}
+                        {% endblock %}
+                    </div>
 
                 </div>
                 <div class="col-lg-1 col-md-1"></div>
             </div>
-
-
-
-
-        </div>
+            </div>
 {% endblock %}
+
+
+
