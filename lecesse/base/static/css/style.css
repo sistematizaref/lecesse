@@ -221,7 +221,7 @@ input[type="password"] {
 }
 
 p.terms {
-  color: #9E9E9E;
+  color: #000 !important;
   margin-bottom: 60px;
 }
 
@@ -370,10 +370,10 @@ div#providers input[type="email"],
 #userEdit input[type="email"], 
 #userEdit input[type="password"],
 #modal_editProviders input[type="email"]{
-  background: #ffffff !important;
+  background: #ffffff;
     border-radius: 4px;
     border: 1px solid #ced4da;
-    color: #ffffff !important;
+    color: #000 !importan;
     font-size: .85em !important;
 }
 
@@ -427,3 +427,4 @@ button.btn.dropdown-toggle.btn-light {
 .tab-pane .btn {
     color: #fff !important;
 }
+
