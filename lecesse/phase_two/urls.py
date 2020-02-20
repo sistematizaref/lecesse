@@ -15,12 +15,18 @@ urlpatterns = [
 
     #view materials
     url('model_apartment/', views.model_apartment, name='model_apartment'),
-
     url('create_apartment/', views.create_apartment, name='create_apartment'),
+    url('edit-apartment/(?P<id_apartment>[0-9]+)/$', views.edit_apartment, name='edit_apartment'),
+    url('delete-apartment/(?P<id_apartment>[0-9]+)/$', views.delete_apartment, name='delete_apartment'),
+    url('view_apartment/(?P<id_apartment>[0-9]+)/$', views.view_apartment, name='view_apartment'),
 
 
     #view providers
     url('project/', views.project, name='project'),
+    url('create-Pro/', views.create_pro, name='create_pro'),
+    url('edit-project/(?P<id_project>[0-9]+)/$', views.edit_pro, name='edit_pro'),
+    url('delete-project/(?P<id_project>[0-9]+)/$', views.delete_pro, name='delete_pro'),
+    url('view_project/(?P<id_project>[0-9]+)/$', views.view_pro, name='view_pro'),
 
 
 

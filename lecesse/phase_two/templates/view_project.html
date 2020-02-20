@@ -10,7 +10,7 @@
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="users.html">Material</a></li>
+                                <li class="breadcrumb-item"><a href="users.html">Project</a></li>
                                 <li class="breadcrumb-item active">View details</li>
                             </ol>
                         </div>
@@ -25,7 +25,7 @@
                         <div class="col-sm-6 mt-1">
 
                             <div class="callout">
-                                <h4 class="modal-title text-left ml-2 mb-3">Material Details</h4>
+                                <h4 class="modal-title text-left ml-2 mb-3">Project Details</h4>
 
                                 <form role="form mt-4">
                                     <div class="card-body">
@@ -33,37 +33,13 @@
                                             <div class="col-sm-6">
                                                 <div class="infoGroup">
                                                     <h5>Name</h5>
-                                                    <p>{{ material.name}}</p>
+                                                    <p>{{ project.name_project}}</p>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="infoGroup">
-                                                    <h5>Reference</h5>
-                                                    <p>{{ material.reference}}</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row mt-3" >
-                                            <div class="col-sm-6">
-                                                <div class="infoGroup">
-                                                    <h5>Description</h5>
-                                                    <p>{{material.description}}</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row mt-3" >
-                                            <div class="col-sm-6">
-                                                <div class="infoGroup">
-                                                    <h5>Color</h5>
-                                                    <p>{{material.color}}</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row mt-3" >
-                                            <div class="col-sm-6">
-                                                <div class="infoGroup">
-                                                    <h5>Price</h5>
-                                                    <p>{{material.price}}</p>
+                                                    <h5>Address</h5>
+                                                    <p>{{ project.address}}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -71,31 +47,31 @@
                                             <div class="col-sm-6">
                                                 <div class="infoGroup">
                                                     <h5>Measured Type</h5>
-                                                    <p>{{material.measured_type}}</p>
+                                                    <p>{{project.city}}</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row mt-3" >
                                             <div class="col-sm-6">
                                                 <div class="infoGroup">
-                                                    <h5>Total Area</h5>
-                                                    <p>{{material.area_total}}</p>
+                                                    <h5>State</h5>
+                                                    <p>{{project.state}}</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row mt-3" >
                                             <div class="col-sm-6">
                                                 <div class="infoGroup">
-                                                    <h5>Environment</h5>
-                                                    <p>{{material.environment}}</p>
+                                                    <h5>Zip Code</h5>
+                                                    <p>{{project.zip_code}}</p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="row mt-3" >
+                                         <div class="row mt-3" >
                                             <div class="col-sm-6">
                                                 <div class="infoGroup">
-                                                    <h5>Category</h5>
-                                                    <p>{{material.category}}</p>
+                                                    <h5>Owner Project</h5>
+                                                    <p>{{project.owner_project}}</p>
                                                 </div>
                                             </div>
                                         </div>

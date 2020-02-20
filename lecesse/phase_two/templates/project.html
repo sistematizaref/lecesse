@@ -1,8 +1,9 @@
 {% extends 'base_phase_two.html' %}
 {% block form %}
-    <div class="row mt-5 mb-4">
+<div class="row mt-5 mb-4">
                                 <div class="col-md-3 text-left">
-                                    <button type="button" class="btn btn-block btn-success btnWidht"><a href="createProject.html">Create project</a></button>
+                                    <button type=""
+                                            class="btn btn-block btn-success btnWidht"><a href="{% url 'phase_two:create_pro' %}">Create Project</a></button>
                                 </div>
                                 <div class="col-md-3 text-left"></div>
                                 <div class="col-md-4 text-left"></div>
@@ -10,53 +11,60 @@
                                     <button type="button" class="btn btn-block btn-secondary btn-sm btnWidhtTwo">Import</button>
                                 </div>
                             </div>
-
+<div>
                             <table class="table table-striped projects mt-3" style="background:#ffffff;">
                                 <thead>
                                     <tr>
                                         <th style="width: 25%">
-                                            Model Apartment Name
+                                            Name
+                                        </th>
+                                         <th style="width: 25%">
+                                            State
                                         </th>
                                         <th style="width: 25%">
-                                            Project
+                                            City
                                         </th>
-                                        <th style="width: 25%">
-                                            Area
+                                         <th style="width: 25%">
+                                            Owner Product
                                         </th>
-
                                         <th style="width: 25%">
                                         </th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
 
-                                        <td>
-                                           Apto model number one
-                                        </td>
-                                        <td>
-                                           Project abraham
-                                        </td>
-                                        <td>
-                                            893 M2
-                                        </td>
+                        {% for project in projects %}
+                        <tr>
+                        <td>
+                            {{ project.name_project}}
+                        </td>
+                        <td>
+                            {{ project.state}}
+                        </td>
+                        <td>
+                            {{ project.city}}
+                        </td>
+                         <td>
+                            {{ project.owner_project}}
+                        </td>
+                         <td class="project-actions text-right">
+                             <a class="btn btn-info btn-sm" href="{% url 'phase_two:view_pro' project.id  %}">
+                                 <i class="fas fa-eye" style="color: #ffffff;">
+                                 </i>
+                             </a>
+                             <a class="btn btn-info btn-sm" href="{% url 'phase_two:edit_pro' project.id  %}">
+                                 <i class="fas fa-pencil-alt" style="color: #ffffff;">
+                                 </i>
+                             </a>
+                             <a class="btn btn-danger btn-sm" href="{% url 'phase_two:delete_pro' project.id  %}">
+                                 <i class="fas fa-trash" style="color: #ffffff;">
+                                 </i>
+                             </a>
+                            </td>
+                                        </tr>
+                        {% endfor %}
 
-                                        <td class="project-actions text-right">
-                                            <a class="btn btn-primary btn-sm" data-toggle="modal"
-                                                data-target="#">
-                                                <i class="far fa-eye" style="color: #ffffff;"></i>
-                                            </a>
-                                            <a class="btn btn-info btn-sm" data-toggle="modal"
-                                                data-target="#">
-                                                <i class="fas fa-pencil-alt" style="color: #ffffff;">
-                                                </i>
-                                            </a>
-                                            <a class="btn btn-danger btn-sm">
-                                                <i class="fas fa-trash" style="color: #ffffff;">
-                                                </i>
-                                            </a>
-                                        </td>
-                                    </tr>
                                 </tbody>
                             </table>
+    </div>
 {% endblock %}

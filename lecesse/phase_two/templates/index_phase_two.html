@@ -24,19 +24,19 @@
                                         <tr>
 
                                             <th style="width: 15%">
-                                                Category
+                                                Name Project
                                             </th>
                                             <th style="width: 15%">
-                                                Subcategory
+                                                Address
                                             </th>
                                             <th style="width: 15%">
-                                                Subcategory 2
+                                                City
                                             </th>
                                             <th style="width: 15%">
-                                                Materials
+                                                State
                                             </th>
                                             <th style="width: 15%">
-                                                Providers
+                                                Owner Project
                                             </th>
 
                                             <th style="width: 25%">
@@ -44,39 +44,43 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
 
-                                            <td>
-                                               Category 1
-                                            </td>
-                                            <td>
-                                               Subcategory 1
-                                            </td>
-                                            <td>
-                                                Subcategory 2
-                                            </td>
-                                            <td>
-                                             Material 1
-                                            </td>
-                                            <td>
-                                                Providers 1
-                                             </td>
-                                            <td class="project-actions text-right">
-                                                <a class="btn btn-primary btn-sm" data-toggle="modal"
-                                                    data-target="#modal-viewEnvironments">
-                                                    <i class="far fa-eye" style="color: #ffffff;"></i>
-                                                </a>
-                                                <a class="btn btn-info btn-sm" data-toggle="modal"
-                                                    data-target="#modal-editEnvironments">
-                                                    <i class="fas fa-pencil-alt" style="color: #ffffff;">
-                                                    </i>
-                                                </a>
-                                                <a class="btn btn-danger btn-sm">
-                                                    <i class="fas fa-trash" style="color: #ffffff;">
-                                                    </i>
-                                                </a>
-                                            </td>
-                                        </tr>
+                        {% for project in projects %}
+                        <tr>
+                        <td>
+                           {{ project.name_project}}
+                        </td>
+                        <td>
+                           {{ project.address}}
+                        </td>
+                        <td>
+                            {{ project.city}}
+                        </td>
+                                                <td>
+                           {{ project.state}}
+                        </td>
+                        <td>
+                            {{ project.owner_project}}
+                        </td>
+
+                          <td class="project-actions text-right">
+                             <a class="btn btn-info btn-sm" href="{% url 'phase_two:view_pro' project.id  %}">
+                                 <i class="fas fa-eye" style="color: #ffffff;">
+                                 </i>
+                             </a>
+                             <a class="btn btn-info btn-sm" href="{% url 'phase_two:edit_pro' project.id  %}">
+                                 <i class="fas fa-pencil-alt" style="color: #ffffff;">
+                                 </i>
+                             </a>
+                             <a class="btn btn-danger btn-sm" href="{% url 'phase_two:delete_pro' project.id  %}">
+                                 <i class="fas fa-trash" style="color: #ffffff;">
+                                 </i>
+                             </a>
+                            </td>
+                               </tr>
+                        {% endfor %}
+
+
                                     </tbody>
                                 </table>
                               </div>

@@ -10,7 +10,7 @@
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="users.html">Environment</a></li>
+                                <li class="breadcrumb-item"><a href="users.html">Model Apartment</a></li>
                                 <li class="breadcrumb-item active">View details</li>
                             </ol>
                         </div>
@@ -25,7 +25,7 @@
                         <div class="col-sm-6 mt-1">
 
                             <div class="callout">
-                                <h4 class="modal-title text-left ml-2 mb-3">Environment Details</h4>
+                                <h4 class="modal-title text-left ml-2 mb-3">Model Apartment Details</h4>
 
                                 <form role="form mt-4">
                                     <div class="card-body">
@@ -33,37 +33,29 @@
                                             <div class="col-sm-6">
                                                 <div class="infoGroup">
                                                     <h5>Name</h5>
-                                                    <p>{{ enviroment.name}}</p>
+                                                    <p>{{ apartment.name}}</p>
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
                                                 <div class="infoGroup">
-                                                    <h5>Description</h5>
-                                                    <p>{{ enviroment.description}}</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row mt-3" >
-                                            <div class="col-sm-6">
-                                                <div class="infoGroup">
-                                                    <h5>Measured Type</h5>
-                                                    <p>{{enviroment.measured_type}}</p>
+                                                    <h5>Identifier</h5>
+                                                    <p>{{ apartment.identifier}}</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row mt-3" >
                                             <div class="col-sm-6">
                                                 <div class="infoGroup">
-                                                    <h5>Area</h5>
-                                                    <p>{{enviroment.area_total}}</p>
+                                                    <h5>Flat</h5>
+                                                    <p>{{apartment.flat}}</p>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row mt-3" >
                                             <div class="col-sm-6">
                                                 <div class="infoGroup">
-                                                    <h5>Icon</h5>
-                                                    <p>{{enviroment.icon}}</p>
+                                                    <h5>Cover Page</h5>
+                                                    <p>{{apartment.cover_page}}</p>
                                                 </div>
                                             </div>
                                         </div>

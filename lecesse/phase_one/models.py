@@ -76,6 +76,7 @@ class Provider(models.Model):
     state = models.CharField(max_length=100, null=False)
     zip_code = models.CharField(max_length=100, null=False)
     contact = models.ForeignKey(Contact, on_delete=models.CASCADE, null=True)
+    material = models.ForeignKey(Material, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

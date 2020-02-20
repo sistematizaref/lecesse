@@ -25,11 +25,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
+
                         {% for apartment in apartments %}
-                        <td>
-                            {{ forloop.counter}}
-                        </td>
+                         <tr>
                         <td>
                            {{ apartment.name}}
                         </td>
@@ -37,21 +35,22 @@
                            {{ apartment.identifier}}
                         </td>
                          <td class="project-actions text-right">
-                             <a class="btn btn-info btn-sm" href="">
+                             <a class="btn btn-info btn-sm" href="{% url 'phase_two:view_apartment' apartment.id  %}">
                                  <i class="fas fa-eye" style="color: #ffffff;">
                                  </i>
                              </a>
-                             <a class="btn btn-info btn-sm" href="">
+                             <a class="btn btn-info btn-sm" href="{% url 'phase_two:edit_apartment' apartment.id  %}">
                                  <i class="fas fa-pencil-alt" style="color: #ffffff;">
                                  </i>
                              </a>
-                             <a class="btn btn-danger btn-sm" href="">
+                             <a class="btn btn-danger btn-sm" href="{% url 'phase_two:delete_apartment' apartment.id  %}">
                                  <i class="fas fa-trash" style="color: #ffffff;">
                                  </i>
                              </a>
                             </td>
+                             </tr>
                         {% endfor %}
-                    </tr>
+
                                 </tbody>
                             </table>
 {% endblock %}

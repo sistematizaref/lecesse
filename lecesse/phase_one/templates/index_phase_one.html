@@ -24,59 +24,51 @@
             <tr>
 
                 <th style="width: 15%">
+                    Name
+                </th>
+                <th style="width: 15%">
+                    Reference
+                </th>
+                <th style="width: 15%">
                     Category
                 </th>
-                <th style="width: 15%">
-                    Subcategory
-                </th>
-                <th style="width: 15%">
-                    Subcategory 2
-                </th>
-                <th style="width: 15%">
-                    Materials
-                </th>
-                <th style="width: 15%">
-                    Providers
-                </th>
-
                 <th style="width: 25%">
                 </th>
             </tr>
         </thead>
         <tbody>
             <tr>
+                        {% for material in materials %}
+                        <td>
+                            {{ forloop.counter}}
+                        </td>
+                        <td>
+                           {{ material.name}}
+                        </td>
+                        <td>
+                           {{ material.reference}}
+                        </td>
+                        <td>
+                            {{ material.category}}
+                        </td>
 
-                <td>
-                   Category 1
-                </td>
-                <td>
-                   Subcategory 1
-                </td>
-                <td>
-                    Subcategory 2
-                </td>
-                <td>
-                 Material 1
-                </td>
-                <td>
-                    Providers 1
-                 </td>
-                <td class="project-actions text-right">
-                    <a class="btn btn-primary btn-sm" data-toggle="modal"
-                        data-target="#modal-viewEnvironments">
-                        <i class="far fa-eye" style="color: #ffffff;"></i>
-                    </a>
-                    <a class="btn btn-info btn-sm" data-toggle="modal"
-                        data-target="#modal-editEnvironments">
-                        <i class="fas fa-pencil-alt" style="color: #ffffff;">
-                        </i>
-                    </a>
-                    <a class="btn btn-danger btn-sm">
-                        <i class="fas fa-trash" style="color: #ffffff;">
-                        </i>
-                    </a>
-                </td>
-            </tr>
+                         <td class="project-actions text-right">
+                             <a class="btn btn-info btn-sm" href="{% url 'phase_one:view_material' material.id  %}">
+                                 <i class="fas fa-eye" style="color: #ffffff;">
+                                 </i>
+                             </a>
+                             <a class="btn btn-info btn-sm" href="{% url 'phase_one:edit_material' material.id  %}">
+                                 <i class="fas fa-pencil-alt" style="color: #ffffff;">
+                                 </i>
+                             </a>
+                             <a class="btn btn-danger btn-sm" href="{% url 'phase_one:delete_material' material.id  %}">
+                                 <i class="fas fa-trash" style="color: #ffffff;">
+                                 </i>
+                             </a>
+                            </td>
+                        {% endfor %}
+                    </tr>
+
         </tbody>
     </table>
   </div>

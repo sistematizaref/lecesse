@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect
 from phase_two.models import *
-from phase_two.forms import EnvironmentsForm, Environments_Edit_Form, Model_Apto_Form
+from phase_two.forms import EnvironmentsForm, Environments_Edit_Form, \
+    Model_Apto_Form, Project_Edit_Form, ProjectForm, Edit_Model_Apto_Form
 
 # Create your views here.
 def home(request):
     """show phase one view"""
-    return render(request, 'index_phase_two.html')
+    projects = Project.objects.all()
+    return render(request, 'index_phase_two.html',{'projects':projects})
 
 def environment(request):
     """show phase one view"""
@@ -70,6 +72,78 @@ def create_apartment(request):
         return render(request, 'form_create_model_apto.html',
                       {'form_apto': form_apto})
 
+def edit_apartment(request, id_apartment):
+    """can edit a enviroment"""
+    apartment = Apto_Model.objects.get(pk=id_apartment)
+
+    if request.method == 'GET':
+        # Get se usa para obtener datos y Post para enviar datos
+        form = Edit_Model_Apto_Form(instance=apartment)
+    else:
+        # Aqui guardamos el cliente
+        form = Edit_Model_Apto_Form(request.POST, instance=apartment)
+        if form.is_valid():
+            form.save()
+            return redirect('/phase_two/model_apartment/')
+    return render(request, 'edit_apartment.html', {'form': form})
+
+
+def view_apartment(request, id_apartment):
+    """can view data enviroment"""
+    apartment = Apto_Model.objects.get(pk=id_apartment)
+    return render(request, 'view_apartment.html', {'apartment': apartment})
+
+
+def delete_apartment(request, id_apartment):
+    """delete a enviroment"""
+    apartment = Apto_Model.objects.get(pk=id_apartment)
+    apartment.delete()
+    return redirect('/phase_two/model_apartment/')
+
 def project(request):
     """show phase one view"""
-    return render(request, 'project.html')
+    projects = Project.objects.all()
+    return render(request, 'project.html', {'projects': projects})
+
+def create_pro(request):
+    """create a project"""
+    projects = Project.objects.all()
+    if request.method == 'POST':
+        form = ProjectForm(request.POST)
+        if form.is_valid():
+            model = form.save(commit=False)
+            model.save()
+            return redirect('phase_two/project/')
+        else:
+            return render(request, 'create_project.html', {'form': form, 'projects': projects})
+    else:
+        form = ProjectForm()
+        return render(request, 'create_project.html', {'form': form, 'projects': projects})
+
+
+def view_pro(request, id_project):
+    """can view data enviroment"""
+    project = Project.objects.get(pk=id_project)
+    return render(request, 'view_project.html', {'project': project})
+
+
+def edit_pro(request, id_project):
+    """can edit a enviroment"""
+    project = Project.objects.get(pk=id_project)
+    if request.method == 'GET':
+        # Get se usa para obtener datos y Post para enviar datos
+        form = Project_Edit_Form(instance=project)
+    else:
+        # Aqui guardamos el cliente
+        form = Project_Edit_Form(request.POST, instance=project)
+        if form.is_valid():
+            form.save()
+            return redirect('phase_two/project/')
+    return render(request, 'edit_project.html', {'form': form})
+
+
+def delete_pro(request, id_project):
+    """delete a category"""
+    project = Project.objects.get(pk=id_project)
+    project.delete()
+    return redirect('phase_two/project/')

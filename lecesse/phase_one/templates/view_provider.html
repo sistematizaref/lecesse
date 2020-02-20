@@ -1,10 +1,111 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block content %}
+<div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header mb-2">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
 
-</body>
-</html>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="users.html">Material</a></li>
+                                <li class="breadcrumb-item active">View details</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div><!-- /.container-fluid -->
+            </section>
+
+            <section class="content-header mb-4">
+                <div class="container-fluid">
+                    <div class="row mt-5">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-6 mt-1">
+
+                            <div class="callout">
+                                <h4 class="modal-title text-left ml-2 mb-3">Material Details</h4>
+
+                                <form role="form mt-4">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="infoGroup">
+                                                    <h5>Name</h5>
+                                                    <p>{{ provider.name}}</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="infoGroup">
+                                                    <h5>Phone Number</h5>
+                                                    <p>{{ provider.phone_number}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3" >
+                                            <div class="col-sm-6">
+                                                <div class="infoGroup">
+                                                    <h5>Email</h5>
+                                                    <p>{{provider.email}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3" >
+                                            <div class="col-sm-6">
+                                                <div class="infoGroup">
+                                                    <h5>Address Company</h5>
+                                                    <p>{{provider.address_company}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3" >
+                                            <div class="col-sm-6">
+                                                <div class="infoGroup">
+                                                    <h5>Activity</h5>
+                                                    <p>{{provider.activity}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3" >
+                                            <div class="col-sm-6">
+                                                <div class="infoGroup">
+                                                    <h5>State</h5>
+                                                    <p>{{provider.state}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3" >
+                                            <div class="col-sm-6">
+                                                <div class="infoGroup">
+                                                    <h5>Zip Code</h5>
+                                                    <p>{{provider.zip_code}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3" >
+                                            <div class="col-sm-6">
+                                                <div class="infoGroup">
+                                                    <h5>Contact</h5>
+                                                    <p>{{provider.contact}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-3" >
+                                            <div class="col-sm-6">
+                                                <div class="infoGroup">
+                                                    <h5>Material</h5>
+                                                    <p>{{provider.material}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div><!-- /.container-fluid -->
+            </section>
+</div>
+{% endblock %}

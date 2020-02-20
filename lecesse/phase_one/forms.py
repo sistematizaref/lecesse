@@ -118,7 +118,8 @@ class Material_Edit_Form(forms.ModelForm):
 class ProviderForm(forms.ModelForm):
     class Meta:
         model = Provider
-        fields = ['name', 'phone_number', 'email', 'address_company', 'activity', 'state', 'zip_code']
+        fields = ['name', 'phone_number', 'email', 'address_company',
+                  'activity', 'state', 'zip_code','material']
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control','placeholder': 'Name'}),
             'phone_number': forms.NumberInput(attrs={'class': 'form-control','placeholder': 'Phone Number'}),
@@ -127,6 +128,7 @@ class ProviderForm(forms.ModelForm):
             'activity': forms.TextInput(attrs={'class': 'form-control','placeholder': 'Activity'}),
             'state': forms.TextInput(attrs={'class': 'form-control','placeholder': 'State'}),
             'zip_code': forms.TextInput(attrs={'class': 'form-control','placeholder': 'Zip Code'}),
+            'material': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Material'}),
         }
         labels = {
             'name': ('Name'),
@@ -136,22 +138,24 @@ class ProviderForm(forms.ModelForm):
             'activity': ('Activity'),
             'state': ('State'),
             'zip_code': ('Zip Code'),
+
         }
 
 
 class Provider_Edit_Form(forms.ModelForm):
     class Meta:
         model = Provider
-        fields = ['name', 'phone_number', 'email', 'address_company', 'activity', 'state', 'zip_code', 'contact']
+        fields = ['name', 'phone_number', 'email', 'address_company', 'activity',
+                  'state', 'zip_code', 'material']
         widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control'}),
-            'phone_number': forms.NumberInput(attrs={'class': 'form-control'}),
-            'email': forms.EmailInput(attrs={'class': 'form-control'}),
-            'address_company': forms.TextInput(attrs={'class': 'form-control'}),
-            'activity': forms.TextInput(attrs={'class': 'form-control'}),
-            'state': forms.TextInput(attrs={'class': 'form-control'}),
-            'zip_code': forms.TextInput(attrs={'class': 'form-control'}),
-            'contact': forms.Select(attrs={'class': 'form-control'}),
+            'name': forms.TextInput(attrs={'class': 'form-control','placeholder': 'Name'}),
+            'phone_number': forms.NumberInput(attrs={'class': 'form-control','placeholder': 'Phone Number'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control','placeholder': 'Email'}),
+            'address_company': forms.TextInput(attrs={'class': 'form-control','placeholder': 'Address'}),
+            'activity': forms.TextInput(attrs={'class': 'form-control','placeholder': 'Activity'}),
+            'state': forms.TextInput(attrs={'class': 'form-control','placeholder': 'State'}),
+            'zip_code': forms.TextInput(attrs={'class': 'form-control','placeholder': 'Zip Code'}),
+            'material': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Material'}),
 
         }
         labels = {

@@ -5,6 +5,29 @@
     <div class="row">
         <div class="col-md-4 ">
                                             <div class="row">
+                                                  <div class="form-group mb-3 text-right backGray col-sm-10">
+                                                        <form method="post">
+                                                            {% csrf_token %}
+                                                        <div class="input-group">
+                                                            {{form_subcategory}}
+                                                        </div>
+                                                        <button type="submit" name="btnform1"
+                                                            class="btn btn-secondary btn-xs mt-2">Save</button>
+                                                        </form>
+                                                    </div>
+
+                                                      <div class="form-group mb-3 text-right backGrayDos col-sm-10">
+                                                        <form method="post">
+                                                            {% csrf_token %}
+                                                        <div class="input-group">
+                                                            {{form_subcategoryTwo}}
+                                                        </div>
+                                                        <button type="submit" name="btnform2"
+                                                            class="btn btn-secondary btn-xs mt-2">Save</button>
+                                                        </form>
+                                                    </div>
+                                            </div>
+                                            <div class="row">
                                                 <div class="col-sm-10">
                                                     <form role="form" method="post">
                                                         {% csrf_token %}
@@ -28,27 +51,7 @@
                                                   </form>
                                                     </div>
 
-                                                      <div class="form-group mb-3 text-right backGray col-sm-10">
-                                                        <form method="post">
-                                                            {% csrf_token %}
-                                                        <div class="input-group">
-                                                            {{form_subcategory}}
-                                                        </div>
-                                                        <button type="submit" name="btnform1"
-                                                            class="btn btn-secondary btn-xs mt-2">Save</button>
-                                                        </form>
-                                                    </div>
 
-                                                      <div class="form-group mb-3 text-right backGrayDos col-sm-10">
-                                                        <form method="post">
-                                                            {% csrf_token %}
-                                                        <div class="input-group">
-                                                            {{form_subcategoryTwo}}
-                                                        </div>
-                                                        <button type="submit" name="btnform2"
-                                                            class="btn btn-secondary btn-xs mt-2">Save</button>
-                                                        </form>
-                                                    </div>
                                                 <div class="col-sm-2"></div>
                                             </div>
         </div>

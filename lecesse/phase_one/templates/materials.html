@@ -37,7 +37,8 @@
                                 </div>
                                 <div class="input-group-prepend">
                                     <input type="text" size=1 class="form-control"  name="base" id="base">
-                                    <span>&nbsp;x&nbsp;</span><input type="text" size=1 class="form-control" id="altura" name="altura">
+                                    <span>&nbsp;x&nbsp;</span>
+                                    <input type="text" size=1 class="form-control" id="altura" name="altura">
                                 </div><span>&nbsp;=&nbsp;</span>
                                 {{form_material.area_total}}
                             </div>
@@ -156,4 +157,11 @@
         </div>
     </div>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+    var base = document.getElementById("base").value;
+    document.getElementById("base").value = base;
+
+</script>
 {% endblock %}

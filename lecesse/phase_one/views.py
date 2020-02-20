@@ -4,7 +4,8 @@ from phase_one.forms import SubcategoryForm,SubcategoryTwoForm, CategoryForm, Ca
 
 def home(request):
     """show phase one view"""
-    return render(request, 'index_phase_one.html')
+    materials = Material.objects.all()
+    return render(request, 'index_phase_one.html',{'materials':materials})
 
 
 def category(request):
