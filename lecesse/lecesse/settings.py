@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'base.apps.BaseConfig',
     'phase_one.apps.PhaseOneConfig',
+    'phase_two.apps.PhaseTwoConfig',
     'users.apps.UsersConfig',
 ]
 
@@ -131,3 +132,6 @@ AUTH_USER_MODEL = 'users.CustomUser'
 
 LOGIN_REDIRECT_URL = '/index/'
 LOGOUT_REDIRECT_URL = '/login/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'base/media')
+MEDIA_URL = '/media/'

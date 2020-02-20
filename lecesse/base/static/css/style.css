@@ -428,3 +428,31 @@ button.btn.dropdown-toggle.btn-light {
     color: #fff !important;
 }
 
+.step {
+            height: 90px;
+            width: 95px;
+            margin: 0 0.5em;
+            background-color:
+                #bbbbbb;
+            border: none;
+            border-radius: 50%;
+            display: inline-block;
+            opacity: 0.5;
+            color:
+                #fff;
+            font-weight: 600;
+            font-size: 3em;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.8;
+        }
+
+
+
+
+        #regForm {
+            background-color: #ffffff;
+            margin: 3em auto ;
+            font-family: 'Poppins', sans-serif;
+            width: 80%;
+        }
+

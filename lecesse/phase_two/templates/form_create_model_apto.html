@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="content-wrapper">
+            <!--Miga-->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+
+                        </div><!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Projects</a></li>
+                                <li class="breadcrumb-item active">Create model apartament</li>
+                            </ol>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!--Contenido-->
+            <div class="row mt-3">
+                <div class="col-lg-1 col-md-1"></div>
+                <div class="col-lg-10 col-md-10">
+                    <h2 class="text-center">Create Model Apartament</h2>
+                    <!-- Circles which indicates the steps of the form: -->
+                    <div style="text-align:center;margin-top:20px;">
+                        <span class="step"> 1 </span>
+                        <span class="step"> 2 </span>
+                        <span class="step"> 3 </span>
+                        <span class="step"> 4 </span>
+                    </div>
+                    <br>
+                    <form id="regForm" method="post" action="" enctype="multipart/form-data">
+                         {% csrf_token %}
+                        <!-- One "tab" for each step in the form: -->
+                        <div class="tab">
+                            {{form_apto.name}}
+                            {{form_apto.identifier}}
+                            {{form_apto.flat}}
+                            {{form_apto.cover_page}}
+                        </div>
+                        <button type="submit"
+                                class="btn btnCategory mt-4">Create</button>
+                    </form>
+                </div>
+                <div class="col-lg-1 col-md-1"></div>
+            </div>
+        </div>
+{% endblock %}
+
+
+

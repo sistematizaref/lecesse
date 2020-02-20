@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import RedirectView
 from django.contrib.auth import views as auth_views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     #direcciones del modulo base
@@ -25,6 +27,8 @@ urlpatterns = [
     path('users/', include('users.urls')),
     #direcciones del modulo phase one
     path('phase_one/', include('phase_one.urls')),
+    #direcciones del modulo phase one
+    path('phase_two/', include('phase_two.urls')),
     #redirige al index luego de hacer el login
     path('', RedirectView.as_view(url="/home/index/")),
     # muestra el login de inicio
@@ -33,4 +37,5 @@ urlpatterns = [
 	#Logout
 	path('logout/', auth_views.LogoutView.as_view(template_name='registration/login.html'),
         name='logout'),
-]
+]+ static(settings.MEDIA_URL,
+                              document_root=settings.MEDIA_ROOT)

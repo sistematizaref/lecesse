@@ -1,0 +1,57 @@
+{% extends 'base_phase_two.html' %}
+{% block form %}
+<div class="row mt-5 mb-4">
+                                <div class="col-md-3 text-left">
+                                    <button type="button" class="btn btn-block btn-success btnWidht"><a href="{% url 'phase_two:create_apartment' %}">Create Model Apartment</a></button>
+                                </div>
+                                <div class="col-md-3 text-left"></div>
+                                <div class="col-md-4 text-left"></div>
+                                <div class="col-md-2 text-right">
+                                    <button type="button" class="btn btn-block btn-secondary btn-sm btnWidhtTwo">Import</button>
+                                </div>
+                            </div>
+
+                            <table class="table table-striped projects mt-3" style="background:#ffffff;">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 25%">
+                                            Model Apartment Name
+                                        </th>
+                                        <th style="width: 25%">
+                                            Identifier
+                                        </th>
+                                        <th style="width: 25%">
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                        {% for apartment in apartments %}
+                        <td>
+                            {{ forloop.counter}}
+                        </td>
+                        <td>
+                           {{ apartment.name}}
+                        </td>
+                        <td>
+                           {{ apartment.identifier}}
+                        </td>
+                         <td class="project-actions text-right">
+                             <a class="btn btn-info btn-sm" href="">
+                                 <i class="fas fa-eye" style="color: #ffffff;">
+                                 </i>
+                             </a>
+                             <a class="btn btn-info btn-sm" href="">
+                                 <i class="fas fa-pencil-alt" style="color: #ffffff;">
+                                 </i>
+                             </a>
+                             <a class="btn btn-danger btn-sm" href="">
+                                 <i class="fas fa-trash" style="color: #ffffff;">
+                                 </i>
+                             </a>
+                            </td>
+                        {% endfor %}
+                    </tr>
+                                </tbody>
+                            </table>
+{% endblock %}

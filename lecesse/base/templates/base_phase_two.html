@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="content-wrapper">
+            <!--Miga-->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+
+                        </div><!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+
+                            </ol>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!--Contenido-->
+            <div class="row mt-3">
+                <div class="col-lg-1 col-md-1"></div>
+                <div class="col-lg-10 col-md-10">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-pills nav-justified" id="TabFaseUno" role="tablist">
+                        <li class="nav-item">
+                            <a href="{% url 'phase_two:home' %}" role="tab"
+                                aria-controls="all" aria-selected="false">All</a>
+                        </li>
+                        <li class="nav-item">
+                            <a  href="{% url 'phase_two:environments' %}" role="tab"
+                                aria-controls="category" aria-selected="false">Environments</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{% url 'phase_two:model_apartment' %}" role="tab"
+                                aria-controls="all" aria-selected="false">Model Apto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a  class=nav-link" href="{% url 'phase_two:project' %}" role="tab"
+                                aria-controls="category" aria-selected="false">Project</a>
+                        </li>
+
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div >
+                     {% block form %} {% endblock %}
+                    </div>
+
+                </div>
+                <div class="col-lg-1 col-md-1"></div>
+            </div>
+            </div>
+{% endblock %}
+
+
+

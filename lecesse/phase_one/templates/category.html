@@ -4,62 +4,57 @@
  <div class="card-body mt-5 p-0">
     <div class="row">
         <div class="col-md-4 ">
-           <form role="form">
                                             <div class="row">
                                                 <div class="col-sm-10">
+                                                    <form role="form" method="post">
+                                                        {% csrf_token %}
                                                     <b class="text-center" style="color: #000;">Create
                                                         Category</b>
                                                     <div class="form-group mt-3">
-                                                        <input type="text" class="form-control" id="Name"
-                                                            placeholder="Name">
+                                                        {{form_category.name}}
                                                     </div>
                                                     <div class="form-group mb-3 text-right backGray">
-                                                        <div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                                <select class="form-control">
-                                                                    <option>Subcategory</option>
-                                                                    <option>option 2</option>
-                                                                    <option>option 3</option>
-                                                                    <option>option 4</option>
-                                                                    <option>option 5</option>
-                                                                </select>
-
-                                                            </div> &nbsp;&nbsp;
-                                                            <input type="text" class="form-control" id="other"
-                                                                placeholder="other">
-                                                        </div>
-                                                        <button type="button"
-                                                            class="btn btn-secondary btn-xs mt-2">Save</button>
+                                                             <div class="input-group-prepend">
+                                                                {{form_category.subcategory}}
+                                                            </div>
+                                                    </div>
+                                                    <div class="form-group mb-3 text-right backGray">
+                                                             <div class="input-group-prepend">
+                                                                {{form_category.subcategory_two}}
+                                                            </div>
                                                     </div>
 
-                                                    <div class="form-group  text-right backGrayDos">
-                                                        <div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                                <select class="form-control">
-                                                                    <option>Subcategory 2</option>
-                                                                    <option>option 2</option>
-                                                                    <option>option 3</option>
-                                                                    <option>option 4</option>
-                                                                    <option>option 5</option>
-                                                                </select>
-                                                            </div> &nbsp;&nbsp;
-                                                            <input type="text" class="form-control" id="other"
-                                                                placeholder="other">
-                                                        </div>
-                                                        <button type="button"
-                                                            class="btn btn-secondary btn-xs mt-2">Save</button>
+                                                    <button type="submit" name="btnform3" class="btn btnCategory mt-2">Create</button>
+                                                  </form>
                                                     </div>
 
+                                                      <div class="form-group mb-3 text-right backGray col-sm-10">
+                                                        <form method="post">
+                                                            {% csrf_token %}
+                                                        <div class="input-group">
+                                                            {{form_subcategory}}
+                                                        </div>
+                                                        <button type="submit" name="btnform1"
+                                                            class="btn btn-secondary btn-xs mt-2">Save</button>
+                                                        </form>
+                                                    </div>
 
-                                                    <button type="button" class="btn btnCategory mt-2">Create</button>
-                                                </div>
+                                                      <div class="form-group mb-3 text-right backGrayDos col-sm-10">
+                                                        <form method="post">
+                                                            {% csrf_token %}
+                                                        <div class="input-group">
+                                                            {{form_subcategoryTwo}}
+                                                        </div>
+                                                        <button type="submit" name="btnform2"
+                                                            class="btn btn-secondary btn-xs mt-2">Save</button>
+                                                        </form>
+                                                    </div>
                                                 <div class="col-sm-2"></div>
                                             </div>
-
-                                        </form>
         </div>
         <div class="col-md-8">
             <p class="text-right"><button class="btn btn-flat btn-sm" style="background: #001D2C;color: #fff;">Exportar</button></p>
+
             <table class="table table-striped projects mt-3" style="background:#ffffff;">
                 <thead>
                     <tr>
@@ -82,34 +77,31 @@
                 </thead>
                 <tbody>
                     <tr>
+                        {% for category in categories %}
                         <td>
-                            1
+                            {{ forloop.counter}}
                         </td>
                         <td>
-                           Category 1
+                           {{ category.name}}
                         </td>
                         <td>
-                           Subcategory 2
+                           {{ category.subcategory}}
                         </td>
                         <td>
-                            Electrica
+                            {{ category.subcategory_two}}
                         </td>
 
-                        <td class="project-actions text-right">
-                            <a class="btn btn-primary btn-sm" data-toggle="modal"
-                                data-target="#modal-viewEnvironments">
-                                <i class="far fa-eye" style="color: #ffffff;"></i>
-                            </a>
-                            <a class="btn btn-info btn-sm" data-toggle="modal"
-                                data-target="#modal-editEnvironments">
-                                <i class="fas fa-pencil-alt" style="color: #ffffff;">
-                                </i>
-                            </a>
-                            <a class="btn btn-danger btn-sm">
-                                <i class="fas fa-trash" style="color: #ffffff;">
-                                </i>
-                            </a>
-                        </td>
+                         <td class="project-actions text-right">
+                             <a class="btn btn-info btn-sm" href="{% url 'phase_one:edit_category' category.id  %}">
+                                 <i class="fas fa-pencil-alt" style="color: #ffffff;">
+                                 </i>
+                             </a>
+                             <a class="btn btn-danger btn-sm" href="{% url 'phase_one:delete_category' category.id  %}">
+                                 <i class="fas fa-trash" style="color: #ffffff;">
+                                 </i>
+                             </a>
+                            </td>
+                        {% endfor %}
                     </tr>
                 </tbody>
             </table>

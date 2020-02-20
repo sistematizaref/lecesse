@@ -3,7 +3,8 @@
 <div class="card-body mt-5 p-0">
     <div class="row">
         <div class="col-md-5">
-            <form role="form">
+            <form role="form" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
                 <div class="row">
                     <div class="col-sm-10">
                         <b class="text-center" style="color: #000;">Create
@@ -11,33 +12,22 @@
 
                         <div class="form-group mt-3">
                             <div class="input-group">
-                                <input type="text" class="form-control" id="Name"
-                                placeholder="Name">&nbsp;&nbsp;
-                                <input type="text" class="form-control" id="Reference"
-                                placeholder="Reference">
+                                {{form_material.name}}&nbsp;
+                                {{form_material.reference}}
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <textarea class="form-control" rows="2"
-                                placeholder="Description"></textarea>
+                            {{form_material.description}}
                         </div>
                         <div class="form-group">
                             <div class="input-group">
-                                <input type="text" class="form-control" id="Color"
-                                placeholder="Color">&nbsp;&nbsp;
-                                <input type="text" class="form-control" id="Price"
-                                placeholder="Price">
+                                {{form_material.color}}&nbsp;
+                               {{form_material.price}}
                             </div>
                         </div>
                         <div class="form-group">
-                            <select class="form-control">
-                              <option>Measured type</option>
-                              <option>option 2</option>
-                              <option>option 3</option>
-                              <option>option 4</option>
-                              <option>option 5</option>
-                            </select>
+                            {{form_material.measured_type}}
                         </div>
 
                         <div class="form-group" id="materialGroup">
@@ -46,69 +36,27 @@
                                     <span style="font-size: .85rem !important;">Area&nbsp;</span>
                                 </div>
                                 <div class="input-group-prepend">
-                                    <input type="text" size=1 class="form-control"  name="base" id="base"> <span>&nbsp;x&nbsp;</span><input type="text" size=1 class="form-control" id="altura" name="altura">
+                                    <input type="text" size=1 class="form-control"  name="base" id="base">
+                                    <span>&nbsp;x&nbsp;</span><input type="text" size=1 class="form-control" id="altura" name="altura">
                                 </div><span>&nbsp;=&nbsp;</span>
-                                <input type="text" class="form-control"   name="total" placeholder="Total">
+                                {{form_material.area_total}}
                             </div>
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">
-                                   <small style="font-size: .6rem !important;">Use calculation of the material area for the other processes</small> </label>
-                              </div>
                         </div>
 
                         <div class="form-group">
                             <div class="input-group">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFile">
-                                    <label class="custom-file-label" for="customFile">Icon</label>
-                                </div>&nbsp;&nbsp;
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="customFile">
-                                    <label class="custom-file-label" for="customFile">File</label>
+                                    {{form_material.image}}
                                 </div>
                             </div>
                         </div>
-
                         <div class="form-group">
                             <div class="input-group">
-                                <select class="form-control">
-                                    <option>Environment</option>
-                                    <option>option 2</option>
-                                    <option>option 3</option>
-                                    <option>option 4</option>
-                                    <option>option 5</option>
-                                  </select>&nbsp;&nbsp;
-                                  <select class="form-control">
-                                    <option>Category</option>
-                                    <option>option 2</option>
-                                    <option>option 3</option>
-                                    <option>option 4</option>
-                                    <option>option 5</option>
-                                  </select>
+                                {{form_material.environment}}&nbsp;
+                                 {{form_material.category}}
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="input-group">
-                                <select class="form-control">
-                                    <option>Subcategory</option>
-                                    <option>option 2</option>
-                                    <option>option 3</option>
-                                    <option>option 4</option>
-                                    <option>option 5</option>
-                                  </select>&nbsp;&nbsp;
-                                  <select class="form-control">
-                                    <option>Subcategory 2</option>
-                                    <option>option 2</option>
-                                    <option>option 3</option>
-                                    <option>option 4</option>
-                                    <option>option 5</option>
-                                  </select>
-                            </div>
-                        </div>
-
-
-                        <button type="button"
+                        <button type="submit"
                             class="btn btnMaterials mt-2">Create</button>
                     </div>
                     <div class="col-sm-2"></div>
@@ -128,52 +76,46 @@
                             Name
                         </th>
                         <th style="width: 10%">
-                            Type
+                            Reference
                         </th>
                         <th style="width: 15%">
                             Category
                         </th>
-                        <th style="width: 15%">
-                            Project
-                        </th>
-
                         <th style="width: 40%">
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
+                        {% for material in materials %}
                         <td>
-                            1
+                            {{ forloop.counter}}
                         </td>
                         <td>
-                           Material 1
+                           {{ material.name}}
                         </td>
                         <td>
-                            M2
+                           {{ material.reference}}
                         </td>
                         <td>
-                            Category 1
-                        </td>
-                        <td>
-                            Project 1
+                            {{ material.category}}
                         </td>
 
-                        <td class="project-actions text-right">
-                            <a class="btn btn-primary btn-sm" data-toggle="modal"
-                                data-target="#modal-viewEnvironments">
-                                <i class="far fa-eye" style="color: #ffffff;"></i>
-                            </a>
-                            <a class="btn btn-info btn-sm" data-toggle="modal"
-                                data-target="#modal-editEnvironments">
-                                <i class="fas fa-pencil-alt" style="color: #ffffff;">
-                                </i>
-                            </a>
-                            <a class="btn btn-danger btn-sm">
-                                <i class="fas fa-trash" style="color: #ffffff;">
-                                </i>
-                            </a>
-                        </td>
+                         <td class="project-actions text-right">
+                             <a class="btn btn-info btn-sm" href="{% url 'phase_one:view_material' material.id  %}">
+                                 <i class="fas fa-eye" style="color: #ffffff;">
+                                 </i>
+                             </a>
+                             <a class="btn btn-info btn-sm" href="{% url 'phase_one:edit_material' material.id  %}">
+                                 <i class="fas fa-pencil-alt" style="color: #ffffff;">
+                                 </i>
+                             </a>
+                             <a class="btn btn-danger btn-sm" href="{% url 'phase_one:delete_material' material.id  %}">
+                                 <i class="fas fa-trash" style="color: #ffffff;">
+                                 </i>
+                             </a>
+                            </td>
+                        {% endfor %}
                     </tr>
                 </tbody>
             </table>

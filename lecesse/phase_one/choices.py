@@ -1,0 +1,10 @@
+ENVIRONMENTS = (
+    ('KITCHEN', 'KITCHEN'),
+    ('GARDEN', 'GARDEN'),
+    ('LIVING_ROOM', 'LIVING ROOM'),
+    ('DINNING_ROOM', 'DINNING ROOM'),
+)
+MEASURED_TYPE = (
+    ('FEET', 'FEET'),
+    ('INCHES', 'INCHES'),
+)
