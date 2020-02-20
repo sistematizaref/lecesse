@@ -9,9 +9,9 @@ urlpatterns = [
     url('home/', views.home, name='home'),
     #view category
     url('category/', views.category, name='category'),
-    url('edit-category/(?P<id_category>[0-9]+)/$', views.edit_category, name='edit_category'),
-    url('delete-category/(?P<id_category>[0-9]+)/$', views.delete_category, name='delete_category'),
-    url('view_category/(?P<id_category>[0-9]+)/$', views.view_category, name='view_category'),
+    url('edit-cate/(?P<id_category>[0-9]+)/$', views.edit_cate, name='edit_cate'),
+    url('delete-cate/(?P<id_category>[0-9]+)/$', views.delete_cate, name='delete_cate'),
+    url('view_cate/(?P<id_category>[0-9]+)/$', views.view_cate, name='view_cate'),
 
     #view materials
     url('materials/', views.materials, name='materials'),

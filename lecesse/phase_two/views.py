@@ -2,13 +2,15 @@ from django.shortcuts import render, redirect
 from phase_two.models import *
 from phase_two.forms import EnvironmentsForm, Environments_Edit_Form, \
     Model_Apto_Form, Project_Edit_Form, ProjectForm, Edit_Model_Apto_Form
+from django.contrib.auth.decorators import login_required
 
-# Create your views here.
+@login_required(login_url='/login/')
 def home(request):
     """show phase one view"""
     projects = Project.objects.all()
     return render(request, 'index_phase_two.html',{'projects':projects})
 
+@login_required(login_url='/login/')
 def environment(request):
     """show phase one view"""
     environments = Environment.objects.all()
@@ -23,6 +25,7 @@ def environment(request):
         form_environment = EnvironmentsForm()
         return render(request, 'environments.html', {'form_environment': form_environment, 'environments': environments})
 
+@login_required(login_url='/login/')
 def edit_enviroment(request, id_enviroment):
     """can edit a enviroment"""
     enviroment = Environment.objects.get(pk=id_enviroment)
@@ -38,25 +41,27 @@ def edit_enviroment(request, id_enviroment):
             return redirect('/phase_two/environments/')
     return render(request, 'edit_environment.html', {'form': form})
 
-
+@login_required(login_url='/login/')
 def view_enviroment(request, id_enviroment):
     """can view data enviroment"""
     enviroment = Environment.objects.get(pk=id_enviroment)
     return render(request, 'view_environment.html', {'enviroment': enviroment})
 
-
+@login_required(login_url='/login/')
 def delete_enviroment(request, id_enviroment):
     """delete a enviroment"""
     enviroment = Environment.objects.get(pk=id_enviroment)
     enviroment.delete()
     return redirect('/phase_two/environments/')
 
-
+@login_required(login_url='/login/')
 def model_apartment(request):
     """show phase one view"""
     apartments = Apto_Model.objects.all()
     return render(request, 'model_apartment.html',{'apartments':apartments})
 
+
+@login_required(login_url='/login/')
 def create_apartment(request):
     """show phase one view"""
     if request.method == 'POST':
@@ -72,6 +77,7 @@ def create_apartment(request):
         return render(request, 'form_create_model_apto.html',
                       {'form_apto': form_apto})
 
+@login_required(login_url='/login/')
 def edit_apartment(request, id_apartment):
     """can edit a enviroment"""
     apartment = Apto_Model.objects.get(pk=id_apartment)
@@ -87,24 +93,28 @@ def edit_apartment(request, id_apartment):
             return redirect('/phase_two/model_apartment/')
     return render(request, 'edit_apartment.html', {'form': form})
 
-
+@login_required(login_url='/login/')
 def view_apartment(request, id_apartment):
     """can view data enviroment"""
     apartment = Apto_Model.objects.get(pk=id_apartment)
     return render(request, 'view_apartment.html', {'apartment': apartment})
 
-
+@login_required(login_url='/login/')
 def delete_apartment(request, id_apartment):
     """delete a enviroment"""
     apartment = Apto_Model.objects.get(pk=id_apartment)
     apartment.delete()
     return redirect('/phase_two/model_apartment/')
 
+
+@login_required(login_url='/login/')
 def project(request):
     """show phase one view"""
     projects = Project.objects.all()
     return render(request, 'project.html', {'projects': projects})
 
+
+@login_required(login_url='/login/')
 def create_pro(request):
     """create a project"""
     projects = Project.objects.all()
@@ -120,13 +130,13 @@ def create_pro(request):
         form = ProjectForm()
         return render(request, 'create_project.html', {'form': form, 'projects': projects})
 
-
+@login_required(login_url='/login/')
 def view_pro(request, id_project):
     """can view data enviroment"""
     project = Project.objects.get(pk=id_project)
     return render(request, 'view_project.html', {'project': project})
 
-
+@login_required(login_url='/login/')
 def edit_pro(request, id_project):
     """can edit a enviroment"""
     project = Project.objects.get(pk=id_project)
@@ -141,7 +151,7 @@ def edit_pro(request, id_project):
             return redirect('phase_two/project/')
     return render(request, 'edit_project.html', {'form': form})
 
-
+@login_required(login_url='/login/')
 def delete_pro(request, id_project):
     """delete a category"""
     project = Project.objects.get(pk=id_project)

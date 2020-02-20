@@ -24,9 +24,9 @@ urlpatterns = [
     #view providers
     url('project/', views.project, name='project'),
     url('create-Pro/', views.create_pro, name='create_pro'),
-    url('edit-project/(?P<id_project>[0-9]+)/$', views.edit_pro, name='edit_pro'),
-    url('delete-project/(?P<id_project>[0-9]+)/$', views.delete_pro, name='delete_pro'),
-    url('view_project/(?P<id_project>[0-9]+)/$', views.view_pro, name='view_pro'),
+    url('edit-pro/(?P<id_project>[0-9]+)/$', views.edit_pro, name='edit_pro'),
+    url('delete-pro/(?P<id_project>[0-9]+)/$', views.delete_pro, name='delete_pro'),
+    url('view_pro/(?P<id_project>[0-9]+)/$', views.view_pro, name='view_pro'),
 
 
 

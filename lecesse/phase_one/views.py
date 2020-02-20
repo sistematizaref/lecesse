@@ -1,13 +1,16 @@
 from django.shortcuts import render, redirect
 from phase_one.models import *
-from phase_one.forms import SubcategoryForm,SubcategoryTwoForm, CategoryForm, Category_Edit_Form, MaterialForm, Material_Edit_Form, ProviderForm, Provider_Edit_Form
+from phase_one.forms import SubcategoryForm,SubcategoryTwoForm, \
+    CategoryForm, Category_Edit_Form, MaterialForm, Material_Edit_Form, ProviderForm, Provider_Edit_Form
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url='/login/')
 def home(request):
     """show phase one view"""
     materials = Material.objects.all()
     return render(request, 'index_phase_one.html',{'materials':materials})
 
-
+@login_required(login_url='/login/')
 def category(request):
     """show category view"""
     categories = Category.objects.all()
@@ -41,17 +44,16 @@ def category(request):
                                                  'form_subcategoryTwo':form_subcategoryTwo,
                                                  'categories': categories})
 
-
-def view_category(request, id_category):
+@login_required(login_url='/login/')
+def view_cate(request, id_category):
     """can view data enviroment"""
     category = Category.objects.get(pk=id_category)
     return render(request, 'view_category.html', {'category': category})
 
-
-def edit_category(request, id_category):
+@login_required(login_url='/login/')
+def edit_cate(request, id_category):
     """can edit a enviroment"""
     category = Category.objects.get(pk=id_category)
-
     if request.method == 'GET':
         # Get se usa para obtener datos y Post para enviar datos
         form = Category_Edit_Form(instance=category)
@@ -63,14 +65,14 @@ def edit_category(request, id_category):
             return redirect('phase_one/category/')
     return render(request, 'edit_category.html', {'form': form})
 
-
-def delete_category(request, id_category):
+@login_required(login_url='/login/')
+def delete_cate(request, id_category):
     """delete a category"""
     category = Category.objects.get(pk=id_category)
     category.delete()
     return redirect('phase_one/category/')
 
-
+@login_required(login_url='/login/')
 def materials(request):
     """show materials view"""
     materials = Material.objects.all()
@@ -87,13 +89,13 @@ def materials(request):
         form_material = MaterialForm()
         return render(request, 'materials.html', {'form_material': form_material, 'materials':materials})
 
-
+@login_required(login_url='/login/')
 def view_material(request, id_material):
     """can view data enviroment"""
     material = Material.objects.get(pk=id_material)
     return render(request, 'view_material.html', {'material': material})
 
-
+@login_required(login_url='/login/')
 def edit_material(request, id_material):
     """can edit a enviroment"""
     material = Material.objects.get(pk=id_material)
@@ -109,14 +111,14 @@ def edit_material(request, id_material):
             return redirect('phase_one/materials/')
     return render(request, 'edit_material.html', {'form': form})
 
-
+@login_required(login_url='/login/')
 def delete_material(request, id_material):
     """delete a category"""
     material = Material.objects.get(pk=id_material)
     material.delete()
     return redirect('phase_one/materials/')
 
-
+@login_required(login_url='/login/')
 def providers(request):
     """show providers view"""
     providers = Provider.objects.all()
@@ -133,12 +135,13 @@ def providers(request):
         form_provider = ProviderForm()
         return render(request, 'providers.html', {'form_provider': form_provider, 'providers': providers})
 
+@login_required(login_url='/login/')
 def view_provider(request, id_provider):
     """can view data enviroment"""
     provider = Provider.objects.get(pk=id_provider)
     return render(request, 'view_provider.html', {'provider': provider})
 
-
+@login_required(login_url='/login/')
 def edit_provider(request, id_provider):
     """can edit a enviroment"""
     provider = Provider.objects.get(pk=id_provider)
@@ -154,7 +157,7 @@ def edit_provider(request, id_provider):
             return redirect('/phase_one/providers/')
     return render(request, 'edit_provider.html', {'form': form})
 
-
+@login_required(login_url='/login/')
 def delete_provider(request, id_provider):
     """delete a category"""
     provider = Provider.objects.get(pk=id_provider)

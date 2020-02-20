@@ -87,8 +87,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+
                         {% for material in materials %}
+                         <tr>
                         <td>
                             {{ forloop.counter}}
                         </td>
@@ -116,8 +117,9 @@
                                  </i>
                              </a>
                             </td>
+                         </tr>
                         {% endfor %}
-                    </tr>
+
                 </tbody>
             </table>
             <div class="row">
@@ -158,10 +160,4 @@
     </div>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script type="text/javascript">
-    var base = document.getElementById("base").value;
-    document.getElementById("base").value = base;
-
-</script>
 {% endblock %}
