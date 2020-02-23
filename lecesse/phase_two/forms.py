@@ -35,7 +35,7 @@ class Environments_Edit_Form(forms.ModelForm):
         }
 
 
-class Model_Apto_Form(forms.ModelForm):
+class Model_Apto_Form_First(forms.ModelForm):
     class Meta:
         model = Apto_Model
         fields = ['name', 'identifier','flat','cover_page']
@@ -47,6 +47,7 @@ class Model_Apto_Form(forms.ModelForm):
             'name': ('Name '),
             'description': ('Description')
         }
+
 
 
 class Edit_Model_Apto_Form(forms.ModelForm):
@@ -67,13 +68,15 @@ class ProjectForm(forms.ModelForm):
     class Meta:
         model = Project
         fields = ['name_project','address','city','state','zip_code',
-                  'owner_project']
+                  'owner_project', 'utility']
         widgets = {
             'name_project': forms.TextInput(attrs={'class': 'form-control'}),
             'address': forms.TextInput(attrs={'class': 'form-control'}),
             'city': forms.TextInput(attrs={'class': 'form-control'}),
             'state': forms.TextInput(attrs={'class': 'form-control'}),
             'zip_code': forms.TextInput(attrs={'class': 'form-control'}),
+            'owner_project': forms.TextInput(attrs={'class': 'form-control'}),
+            'utility': forms.TextInput(attrs={'class': 'form-control'}),
         }
         labels = {
             'name_project': ('Name'),
@@ -81,7 +84,8 @@ class ProjectForm(forms.ModelForm):
             'city': ('City'),
             'state': ('State'),
             'zip_code': ('Zip Code'),
-            'owner_project': ('Owner Project')
+            'owner_project': ('Owner Project'),
+            'utility': ('Utility')
         }
 
 
@@ -105,4 +109,36 @@ class Project_Edit_Form(forms.ModelForm):
             'state': ('State'),
             'zip_code': ('Zip Code'),
             'owner_project': ('Owner Project'),
+        }
+
+class Contact_Form(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = ['first_name', 'last_name', 'phone_number', 'position', 'email']
+        widgets = {
+            'first_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control'}),
+            'phone_number': forms.TextInput(attrs={'class': 'form-control'}),
+            'position': forms.TextInput(attrs={'class': 'form-control'}),
+            'email': forms.TextInput(attrs={'class': 'form-control'}),
+        }
+
+class Building_Form(forms.ModelForm):
+    class Meta:
+        model = Building
+        fields = ['number_builings', 'number_floors']
+        widgets = {
+            'number_builings': forms.TextInput(attrs={'class': 'form-control'}),
+            'number_floors': forms.TextInput(attrs={'class': 'form-control'}),
+        }
+
+class Various_Form(forms.ModelForm):
+    class Meta:
+        model = various
+        fields = ['type_measure', 'area', 'price', 'provider']
+        widgets = {
+            'type_measure': forms.Select(attrs={'class': 'form-control'}),
+            'area': forms.TextInput(attrs={'class': 'form-control'}),
+            'price': forms.TextInput(attrs={'class': 'form-control'}),
+            'provider': forms.Select(attrs={'class': 'form-control'}),
         }

@@ -13,6 +13,11 @@
 
 body{background: #ffffff; }
 
+.btn a{
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
 .main-box{
   position: relative;
   display: contents;
@@ -67,7 +72,7 @@ body{background: #ffffff; }
 .slick-slide,
 .slick-slider{
   width: 100%;
-  height: 100% 
+  height: 100%
 }
 
 .slick-slide img{
@@ -205,7 +210,7 @@ body{background: #ffffff; }
   height: 100%;
 }
 
-.form form 
+.form form
 label,
 input[type="text"],
 input[type="email"],
@@ -221,13 +226,13 @@ input[type="password"] {
 }
 
 p.terms {
-  color: #000 !important;
+  color: #9E9E9E;
   margin-bottom: 60px;
 }
 
-.form form 
+.form form
 input[type="text"],
-input[type="email"], 
+input[type="email"],
 input[type="password"] {
     color: #000;
     width: 100%;
@@ -360,20 +365,20 @@ nav.main-header.navbar.navbar-expand.navbar-white.navbar-light {
 
 .btn:not(:disabled):not(.disabled).hover, .btn:not(:disabled):not(.disabled):hover ,
 .btn:not(:disabled):not(.disabled).active, .btn:not(:disabled):not(.disabled):active {
-  box-shadow: 1px 1px 3px #A73439, -1px -1px 3px #D58017 !important;
-  background: #1f2d3d;
-  color: #ffffff;
+  box-shadow: none !important;
+  color:#a20825;
 }
 
+#modal_editUser input[type="email"],
 div#providers input[type="email"],
 #usersCreate input[type="email"],
-#userEdit input[type="email"], 
+#userEdit input[type="email"],
 #userEdit input[type="password"],
 #modal_editProviders input[type="email"]{
-  background: #ffffff;
+  background: #ffffff !important;
     border-radius: 4px;
     border: 1px solid #ced4da;
-    color: #000 !importan;
+    color: #ffffff !important;
     font-size: .85em !important;
 }
 
@@ -412,47 +417,270 @@ button.btn.dropdown-toggle.btn-light {
   padding: .5em;
 }
 
-/*TAB fase 1*/
 
-#TabFaseUno .nav-item a {
-    padding: 1em 2.5em;
-    color: #6c757d !important;
+ul.tabEnviron{
+  list-style: none !important;
 }
 
-#TabFaseUno .nav-item {
-    box-shadow: 0px 0px 5px #5a5a5a7d;
-    padding: .85em;
+/*
+---Home Cuadros
+*/
+
+div.uno .small-box .btn {
+  width: 100%;
+  background: url(../img/number/uno.png) !important;
+  height: 130px;
+  box-shadow: none !important;
+  border-radius: 0;
+  border: 0px;
+  background-position: center !important;
+  background-size: 100% !important;
 }
 
-.tab-pane .btn {
-    color: #fff !important;
+div.dos .small-box .btn {
+  width: 100%;
+  background: url(../img/number/dos.png) !important;
+  height: 130px;
+  box-shadow: none !important;
+  border-radius: 0;
+  border: 0px;
+  background-position: center !important;
+  background-size: 100% !important;
+}
+div.tres .small-box .btn {
+  width: 100%;
+  background: url(../img/number/tres.png) !important;
+  height: 130px;
+  box-shadow: none !important;
+  border-radius: 0;
+  border: 0px;
+  background-position: center !important;
+  background-size: 100% !important;
+}
+div.cuatro .small-box .btn {
+  width: 100%;
+  background: url(../img/number/cuatro\ .png) !important;
+  height: 130px;
+  box-shadow: none !important;
+  border-radius: 0;
+  border: 0px;
+  background-position: center !important;
+  background-size: 100% !important;
+}
+div.cinco .small-box .btn {
+  width: 100%;
+  background: url(../img/number/cinco.png) !important;
+  height: 130px;
+  box-shadow: none !important;
+  border-radius: 0;
+  border: 0px;
+  background-position: center !important;
+  background-size: 100% !important;
+}
+div.seis .small-box .btn {
+  width: 100%;
+  background: url(../img/number/seis.png) !important;
+  height: 130px;
+  box-shadow: none !important;
+  border-radius: 0;
+  border: 0px;
+  background-position: center !important;
+  background-size: 100% !important;
+}
+div.siete .small-box .btn {
+  width: 100%;
+  background: url(../img/number/siete.png) !important;
+  height: 130px;
+  box-shadow: none !important;
+  border-radius: 0;
+  border: 0px;
+  background-position: center !important;
+  background-size: 100% !important;
+}
+div.ocho .small-box .btn {
+  width: 100%;
+  background: url(../img/number/ocho.png) !important;
+  height: 130px;
+  box-shadow: none !important;
+  border-radius: 0;
+  border: 0px;
+  background-position: center !important;
+  background-size: 100% !important;
+}
+.small-box,
+.small-box:hover{
+  box-shadow: none;
 }
 
-.step {
-            height: 90px;
-            width: 95px;
-            margin: 0 0.5em;
-            background-color:
-                #bbbbbb;
-            border: none;
-            border-radius: 50%;
-            display: inline-block;
-            opacity: 0.5;
-            color:
-                #fff;
-            font-weight: 600;
-            font-size: 3em;
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.8;
-        }
+* {
+  box-sizing: border-box;
+}
+
+#createModel #regForm {
+  background-color: #ffffff;
+  margin: 3em auto ;
+  font-family: 'Poppins', sans-serif;
+  width: 80%;
+}
+
+#createModel h1 {
+  text-align: center;
+}
+
+#createModel input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: 'Poppins', sans-serif;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+#createModel input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+
+#createModel button {
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+}
+
+#createModel button:hover {
+  opacity: 0.8;
+}
+
+#createModel  #prevBtn {
+  background-color: #bbbbbb;
+}
+
+/* Make circles that indicate the steps of the form: */
+#createModel .step {
+  height: 90px;
+  width: 95px;
+  margin: 0 0.5em;
+  background-color:
+      #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+  color:
+      #fff;
+  font-weight: 600;
+  font-size: 3em;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.8;
+}
+
+#createModel .step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+#createModel .step.finish {
+  background-color: #4CAF50;
+}
+
+#prevBtn a,
+#nextBtn a{
+  color:#fff !important;
+}
+
+#createProject #regForm {
+  background-color: #ffffff;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+  padding: 40px;
+  width: 70%;
+  min-width: 300px;
+}
+
+#createProject  h1 {
+  text-align: center;
+}
+
+#createProject  input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: 'Poppins', sans-serif;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+#createProject  input.invalid {
+  background-color: #ffdddd;
+}
 
 
+#createProject  button {
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+}
+
+#createProject  button:hover {
+  opacity: 0.8;
+}
+
+#createProject  #prevBtn {
+  background-color: #bbbbbb;
+}
+
+/* Make circles that indicate the steps of the form: */
+#createProject  .step {
+  height: 90px;
+  width: 100px;
+  margin: 0 0.5em;
+  background-color:
+      #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+  color:
+      #fff;
+  font-weight: 600;
+  font-size: 3em;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.8;
+}
+
+#createProject  .step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+#createProject  .step.finish {
+  background-color: #4CAF50;
+}
 
 
-        #regForm {
-            background-color: #ffffff;
-            margin: 3em auto ;
-            font-family: 'Poppins', sans-serif;
-            width: 80%;
-        }
+.tab .form-control {
+  border-radius: 0px !important;
+  font-size: 14px !important;
+  padding: .5em !important;
+  height: 40px !important;
+  color: #666 !important;
+  font-weight: 300 !important;
+  border: 1px solid #cdcdcd !important;
+}
 
+.tab .form-control::placeholder{
+  color: #666 !important;
+}
+
+#regForm .col-md-7.pl-4 {
+  border-left: 1px solid #666;
+}

@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="content-wrapper">
+            <!--Miga-->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+
+                        </div><!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Projects</a></li>
+                                <li class="breadcrumb-item active">Create model apartament</li>
+                            </ol>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!--Contenido-->
+            <div class="row mt-3" id="createModel">
+                <div class="col-lg-1 col-md-1"></div>
+                <div class="col-lg-10 col-md-10">
+                    <h2 class="text-center">Create Model Apartament</h2>
+                    <!-- Circles which indicates the steps of the form: -->
+                    <div style="text-align:center;margin-top:20px;">
+                        <span class="step active"> 1 </span>
+                        <span class="step active"> 2 </span>
+                        <span class="step finish"> 3 </span>
+                        <span class="step"> 4 </span>
+                    </div>
+
+                    <form id="regForm" method="post" action="">
+                        {% csrf_token %}
+                        <div class="tab">
+                            <table style="width: 100%;" cellpadding="1" class="table table-striped mt-5" style="background:#ffffff;">
+                                <thead>
+                                    <tr>
+                                        <th class="align-middle">&nbsp;Category</th>
+                                        <th class="align-middle">&nbsp;Material</th>
+                                        <th class="align-middle">&nbsp;Reference</th>
+                                        <th class="align-middle">&nbsp;Type measurement</th>
+                                        <th class="align-middle">&nbsp;Quantity / area material use</th>
+                                        <th class="align-middle">&nbsp;Price</th>
+                                        <th class="align-middle">Provider</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {% for environment in environments %}
+                                    <tr>
+                                        <td class="align-middle">&nbsp;{{environment.category}}</td>
+                                        <td class="align-middle">&nbsp;{{environment.name}}</td>
+                                        <td class="align-middle">&nbsp;{{environment.reference}}</td>
+                                        <td class="align-middle">&nbsp;
+                                            {{form.type_measure}}
+                                        </td>
+                                        <td class="align-middle">&nbsp;
+                                            {{form.area}}
+                                        </td>
+                                        <td class="align-middle">&nbsp;{{form.price}}</td>
+                                        <td class="align-middle">&nbsp;
+                                            {{form.provider}}
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+
+
+                        <div class="mt-3" style="overflow:auto;">
+                            <div style="float:right;">
+                                <button type="submit" id="prevBtn"><a href="createModelApto_dos.html">Previous</a></button>
+                                <button type="button" id="nextBtn"><a href="{% url 'phase_two:create_apartment_finish'%}">Next</a></button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="col-lg-1 col-md-1"></div>
+            </div>
+        </div>
+{% endblock %}

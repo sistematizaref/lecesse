@@ -89,6 +89,7 @@ def materials(request):
         form_material = MaterialForm()
         return render(request, 'materials.html', {'form_material': form_material, 'materials':materials})
 
+
 @login_required(login_url='/login/')
 def view_material(request, id_material):
     """can view data enviroment"""

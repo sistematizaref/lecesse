@@ -36,11 +36,13 @@
                                     <span style="font-size: .85rem !important;">Area&nbsp;</span>
                                 </div>
                                 <div class="input-group-prepend">
-                                    <input type="text" size=1 class="form-control"  name="base" id="base">
+                                    <input type="text" size=1 class="form-control monto" name="Precio" id="Precio" value="" onkeyup="multi();">
                                     <span>&nbsp;x&nbsp;</span>
-                                    <input type="text" size=1 class="form-control" id="altura" name="altura">
+                                    <input type="text" size=1 class="form-control monto" name="Cantidad" id="Cantidad" onkeyup="multi();">
                                 </div><span>&nbsp;=&nbsp;</span>
-                                {{form_material.area_total}}
+                                      <input type="hidden" name="area_total" id="area_total">
+                                 <label id="Resultado">
+                                 </label>
                             </div>
                         </div>
 
@@ -160,4 +162,21 @@
     </div>
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+function multi(){
+    var total = 1;
+    var change= false; //
+    $(".monto").each(function(){
+        if (!isNaN(parseFloat($(this).val()))) {
+            change= true;
+            total *= parseFloat($(this).val());
+        }
+    });
+
+    total = (change)? total:0;
+    document.getElementById('Resultado').innerHTML = total;
+    $("#area_total").val(total);
+}
+</script>
 {% endblock %}

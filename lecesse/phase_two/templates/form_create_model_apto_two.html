@@ -24,25 +24,38 @@
                     <h2 class="text-center">Create Model Apartament</h2>
                     <!-- Circles which indicates the steps of the form: -->
                     <div style="text-align:center;margin-top:20px;">
-                        <span class="step finish"> 1 </span>
-                        <span class="step"> 2 </span>
+                        <span class="step active"> 1 </span>
+                        <span class="step finish"> 2 </span>
                         <span class="step"> 3 </span>
                         <span class="step"> 4 </span>
                     </div>
 
-                    <form id="regForm" method="post" action="" enctype="multipart/form-data">
-                        <!-- One "tab" for each step in the form: -->
-                        {% csrf_token %}
-                        <div class="tab">
-                            {{form_apto.name}}
-                            {{form_apto.identifier}}
-                            {{form_apto.flat}}
-                            {{form_apto.cover_page}}
-                        </div>
+                    <form id="regForm" >
+                        <div class="tab ml-5">
+                            Select the corresponding environments
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    {% for environment in environments %}
+                                    <ul class="tabEnviron mt-3">
+                                        <li>
+                                            <div class="form-group clearfix mt-3">
+                                                <div class="icheck-success d-inline">
+                                                    <input type="checkbox" id="{{environment.id}}">
+                                                    <label for="{{environment.id}}"> {{environment.name}}
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </li>
 
+                                    </ul>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
                         <div class="mt-3" style="overflow:auto;">
                             <div style="float:right;">
-                                <button type="submit" id="nextBtn">Next</button>
+                                <button type="submit" id="prevBtn"><a href="">Previous</a></button>
+                                <button type="button" id="nextBtn"><a href="{% url 'phase_two:create_apartment_tree'%}">Next</a></button>
                             </div>
                         </div>
 
@@ -51,7 +64,4 @@
                 <div class="col-lg-1 col-md-1"></div>
             </div>
         </div>
-    {% endblock %}
-
-
-
+{% endblock %}

@@ -11,35 +11,38 @@
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Projects</a></li>
-                                <li class="breadcrumb-item active">Create Project</li>
+                                <li class="breadcrumb-item active">Create model apartament</li>
                             </ol>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>
-
             <!--Contenido-->
-            <div class="row mt-3" id="createProject">
+            <div class="row mt-3" id="createModel">
                 <div class="col-lg-1 col-md-1"></div>
                 <div class="col-lg-10 col-md-10">
-                    <h2 class="text-center">Create Project</h2>
+                    <h2 class="text-center">Create Model Apartament</h2>
                     <!-- Circles which indicates the steps of the form: -->
                     <div style="text-align:center;margin-top:20px;">
-                        <span class="step finish"> 1 </span>
-                        <span class="step"> 2 </span>
-                        <span class="step"> 3 </span>
-                        <span class="step"> 4 </span>
+                        <span class="step active"> 1 </span>
+                        <span class="step active"> 2 </span>
+                        <span class="step active"> 3 </span>
+                        <span class="step finish"> 4 </span>
                     </div>
 
-                    <form id="regForm" method="post">
-                        {% csrf_token %}
-                        <!-- One "tab" for each step in the form: -->
+                    <form id="regForm" action="">
+
                         <div class="tab">
-                            {{form}}
+                           <div class="messageFinishApto text-center mt-4 mb-4">
+                            <h2>finished</h2>
+                            <p> click <strong>submit </strong>to finish with the creation of the model apartment </p>
+                           </div>
                         </div>
-                        <div class="mt-3 mr-1" style="overflow:auto;">
-                            <div class="text-right">
-                                <button type="submit" id="nextBtn" >Next</button>
+
+                        <div class="mt-3" style="overflow:auto;">
+                            <div style="float:right;">
+                                <button type="button" id="prevBtn"><a href="createModelApto_dos.html">Previous</a></button>
+                                <button type="button" id="nextBtn"><a href="{% url 'phase_two:model_apartment'%}">Save</a></button>
                             </div>
                         </div>
 

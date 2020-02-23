@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from phase_two.models import *
 from phase_two.forms import EnvironmentsForm, Environments_Edit_Form, \
-    Model_Apto_Form, Project_Edit_Form, ProjectForm, Edit_Model_Apto_Form
+    Model_Apto_Form_First, Project_Edit_Form, \
+    ProjectForm, Edit_Model_Apto_Form, Contact_Form, Building_Form, Various_Form
 from django.contrib.auth.decorators import login_required
 
 @login_required(login_url='/login/')
@@ -64,18 +65,35 @@ def model_apartment(request):
 @login_required(login_url='/login/')
 def create_apartment(request):
     """show phase one view"""
+    environments = Environment.objects.all()
     if request.method == 'POST':
-        form_apto = Model_Apto_Form(request.POST, request.FILES)
+        form_apto = Model_Apto_Form_First(request.POST, request.FILES)
         if form_apto.is_valid():
             form_apto.save()
-            return redirect('/phase_two/model_apartment/')
+            print("entro")
+            return render(request, 'form_create_model_apto_two.html',
+                          {'environments':environments})
         else:
+            print("no valido")
             return render(request, 'form_create_model_apto.html',
                           {'form_apto': form_apto})
     else:
-        form_apto = Model_Apto_Form()
+        form_apto = Model_Apto_Form_First()
         return render(request, 'form_create_model_apto.html',
                       {'form_apto': form_apto})
+
+
+@login_required(login_url='/login/')
+def create_apartment_tree(request):
+    """show phase one view"""
+    environments = Material.objects.all()
+    form = Various_Form()
+    return render(request, 'form_create_model_apto_tree.html', {'form': form, 'environments':environments})
+
+@login_required(login_url='/login/')
+def create_apartment_finish(request):
+    """show phase one view"""
+    return render(request, 'finish_model_apto.html')
 
 @login_required(login_url='/login/')
 def edit_apartment(request, id_apartment):
@@ -117,18 +135,48 @@ def project(request):
 @login_required(login_url='/login/')
 def create_pro(request):
     """create a project"""
-    projects = Project.objects.all()
     if request.method == 'POST':
         form = ProjectForm(request.POST)
         if form.is_valid():
-            model = form.save(commit=False)
-            model.save()
-            return redirect('phase_two/project/')
+            project = form.save()
+            request.session['id_project'] = project.id
+            return redirect('/phase_two/create_cont/')
         else:
-            return render(request, 'create_project.html', {'form': form, 'projects': projects})
+            return render(request, 'create_project.html', {'form': form})
     else:
         form = ProjectForm()
-        return render(request, 'create_project.html', {'form': form, 'projects': projects})
+        return render(request, 'create_project.html', {'form': form})
+
+
+@login_required(login_url='/login/')
+def create_cont(request):
+    """can view data enviroment"""
+    contacts = Contact.objects.all()
+    if request.method == 'POST':
+        form = Contact_Form(request.POST)
+        if form.is_valid():
+            data = form.cleaned_data
+            print("guardo")
+            id_project = request.session.get('id_project')
+            contact = Contact(
+                first_name=data['first_name'],
+                last_name=data['last_name'],
+                phone_number=data['phone_number'],
+                position=data['position'],
+                email=data['email'],
+                id_project=id_project
+            )
+            contact.save()
+            return redirect('/phase_two/create_cont/')
+        else:
+            print("No valido form")
+            return render(request, 'create_contact.html', {'form_contact': form})
+    else:
+        form_contact = Contact_Form()
+        print("Entro a crear cont")
+        return render(request, 'create_contact.html', {'form_contact': form_contact, 'contacts': contacts })
+
+
 
 @login_required(login_url='/login/')
 def view_pro(request, id_project):
@@ -157,3 +205,42 @@ def delete_pro(request, id_project):
     project = Project.objects.get(pk=id_project)
     project.delete()
     return redirect('phase_two/project/')
+
+
+@login_required(login_url='/login/')
+def create_building(request):
+    """delete a category"""
+    if request.method == 'POST':
+        form = Building_Form(request.POST)
+        if form.is_valid():
+            data = form.cleaned_data
+            print("guardo")
+            id_project = request.session.get('id_project')
+            building = Building(
+                number_builings=data['number_builings'],
+                number_floors=data['number_floors'],
+                id_project=id_project,
+            )
+            building.save()
+            return redirect
+        else:
+            print("No valido form")
+            return render(request, 'create_building.html', {'form_contact': form})
+    else:
+        form_contact = Building_Form()
+        print("Entro a crear cont")
+        return render(request, 'create_building.html', {'form_contact': form_contact})
+
+
+
+@login_required(login_url='/login/')
+def finish_pro(request):
+    """delete a category"""
+    id_project = request.session.get('id_project')
+    project = Project.objects.get(id=id_project)
+    print(project)
+    contact = Contact.objects.filter(id_project=id_project)
+    building = Building.objects.filter(id_project=id_project)
+    return render(request, 'finish_project.html', {'project':project,
+                                                   'contact':contact,
+                                                   'building':building})

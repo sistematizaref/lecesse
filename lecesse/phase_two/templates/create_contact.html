@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="content-wrapper">
+            <!--Miga-->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+
+                        </div><!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Projects</a></li>
+                                <li class="breadcrumb-item active">Create Project</li>
+                            </ol>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+
+            <!--Contenido-->
+            <div class="row mt-3 mb-4" id="createProject">
+                <div class="col-lg-1 col-md-1"></div>
+                <div class="col-lg-10 col-md-10 mb-5">
+                    <h2 class="text-center">Create Project</h2>
+                    <!-- Circles which indicates the steps of the form: -->
+                    <div style="text-align:center;margin-top:20px;">
+                        <span class="step active"> 1 </span>
+                        <span class="step finish"> 2 </span>
+                        <span class="step"> 3 </span>
+                        <span class="step"> 4 </span>
+                    </div>
+                                            <!-- One "tab" for each step in the form: -->
+                        <div class="tab">Debes crear a el contacto correspondiente
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <form method="post">
+                                         {% csrf_token %}
+                                        <div class="row">
+                                            <div class="col-sm-10">
+                                                <div class="form-group">
+                                                    {{form_contact.first_name}}
+                                                </div>
+                                                <div class="form-group">
+                                                    {{form_contact.last_name}}
+                                                </div>
+                                                <div class="form-group">
+                                                    {{form_contact.phone_number}}
+                                                </div>
+                                                <div class="form-group">
+                                                    {{form_contact.position}}
+                                                </div>
+                                                <div class="form-group">
+                                                    {{form_contact.email}}
+                                                </div>
+                                                <button type="submit" class="btn btnMaterials mt-2">Añadir otro contacto</button>
+
+                                            </div>
+                                            <div class="col-sm-2"></div>
+                                        </div>
+
+                                    </form>
+                                </div>
+                                <div class="col-md-7">
+                                    <table class="table table-striped projects mt-3" style="background:#ffffff;">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 20%">
+                                                    Nombre
+                                                </th>
+                                                <th style="width: 10%">
+                                                    Apellido
+                                                </th>
+                                                <th style="width: 20%">
+                                                    Telefono
+                                                </th>
+                                                <th style="width: 20%">
+                                                    Cargo
+                                                </th>
+                                                <th style="width: 20%">
+                                                    Correo Electronico
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for contact in contacts %}
+                                            <tr>
+                                                <td>
+                                                    {{contact.first_name}}
+                                                </td>
+                                                <td>
+                                                    {{contact.last_name}}
+                                                </td>
+                                                <td>
+                                                    {{contact.phone_number}}
+                                                </td>
+                                                <td>
+                                                    {{contact.position}}
+                                                </td>
+                                                <td>
+                                                    {{contact.email}}
+                                                </td>
+
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-12">
+                                            <div class="dataTables_paginate paging_simple_numbers"
+                                                id="example1_paginate">
+                                                <ul class="pagination">
+                                                    <li class="paginate_button page-item previous disabled"
+                                                        id="example1_previous">
+                                                        <a href="#" aria-controls="example1" data-dt-idx="0"
+                                                            tabindex="0" class="page-link">
+                                                            Previous
+                                                        </a>
+                                                    </li>
+                                                    <li class="paginate_button page-item active">
+                                                        <a href="#" aria-controls="example1" data-dt-idx="1"
+                                                            tabindex="0" class="page-link">
+                                                            1
+                                                        </a>
+                                                    </li>
+                                                    <li class="paginate_button page-item ">
+                                                        <a href="#" aria-controls="example1" data-dt-idx="2"
+                                                            tabindex="0" class="page-link">
+                                                            2
+                                                        </a>
+                                                    </li>
+                                                    <li class="paginate_button page-item next" id="example1_next">
+                                                        <a href="#" aria-controls="example1" data-dt-idx="7"
+                                                            tabindex="0" class="page-link">
+                                                            Next
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-3 mr-1" style="overflow:auto;">
+                            <div class="text-right">
+                                <button type="button" id="prevBtn"><a href="#"> Previous</a></button>
+                                <button type="button" id="nextBtn" ><a href="{% url 'phase_two:create_building'%}">Next</a> </button>
+                            </div>
+                        </div>
+
+
+                </div>
+                <div class="col-lg-1 col-md-1"></div>
+            </div>
+        </div>
+{% endblock %}
+
+
+
