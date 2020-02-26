@@ -222,7 +222,7 @@ def create_building(request):
                 id_project=id_project,
             )
             building.save()
-            return redirect
+            return redirect('/phase_two/finish_pro/')
         else:
             print("No valido form")
             return render(request, 'create_building.html', {'form_contact': form})
