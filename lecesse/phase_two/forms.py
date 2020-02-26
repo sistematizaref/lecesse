@@ -116,11 +116,11 @@ class Contact_Form(forms.ModelForm):
         model = Contact
         fields = ['first_name', 'last_name', 'phone_number', 'position', 'email']
         widgets = {
-            'first_name': forms.TextInput(attrs={'class': 'form-control'}),
-            'last_name': forms.TextInput(attrs={'class': 'form-control'}),
-            'phone_number': forms.TextInput(attrs={'class': 'form-control'}),
-            'position': forms.TextInput(attrs={'class': 'form-control'}),
-            'email': forms.TextInput(attrs={'class': 'form-control'}),
+            'first_name': forms.TextInput(attrs={'class': 'form-control','placeholder': 'First Name'}),
+            'last_name': forms.TextInput(attrs={'class': 'form-control','placeholder': 'Last Name'}),
+            'phone_number': forms.TextInput(attrs={'class': 'form-control','placeholder': 'Phone Number'}),
+            'position': forms.TextInput(attrs={'class': 'form-control','placeholder': 'Position'}),
+            'email': forms.TextInput(attrs={'class': 'form-control','placeholder': 'Email'}),
         }
 
 class Building_Form(forms.ModelForm):
